@@ -1,0 +1,9 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security vulnerability reporting
+    url: https://github.com/1807-labs/Forakilo/security/policy
+    about: Do not disclose vulnerabilities, secrets, credentials, personal data, or trading-impacting exploit details in public issues.
+  - name: Documentation index
+    url: https://github.com/1807-labs/Forakilo/blob/main/DOCUMENTATION_INDEX.md
+    about: Start here for product, architecture, security, data, ML, trading, legal, operations, and roadmap docs.
+
