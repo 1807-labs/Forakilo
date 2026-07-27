@@ -44,3 +44,7 @@ Repeatability was tested by clearing/recreating the environment with `uv venv --
 The `uv` and outside-LEAN package-import portions passed twice. The actual LEAN/pythonnet import could not be executed because this Windows host has no .NET SDK/runtime and the checkout has no prebuilt launcher output. LEAN was not built because Phase 1A explicitly prohibited it. No substitute upstream `pythonnet` wheel was installed because LEAN expects QuantConnect's fork and random binary pinning would not be valid evidence.
 
 The authoritative result is therefore `BLOCKED`, as documented in `docs/PHASE_1A_RESULT.md`.
+
+## Phase 1A-R
+
+The 2026-07-27 rerun adopted Python 3.11.11 as the canonical LEAN-facing runtime through ADR-0010, but did not provision either requested environment. The host had only 7.19 GiB free, below the 25 GiB gate, so the authorized outcome was `BLOCKED_RESOURCE`. See `docs/PHASE_1A_RERUN.md`.

@@ -2,6 +2,8 @@
 
 Preflight date: 2026-07-26.
 
+Phase 1A-R verification on 2026-07-27 confirmed the canonical workspace is `C:\Users\Wildf\chainna`, all expected commits still matched, and all repositories were clean. Current host/resource details and the `BLOCKED_RESOURCE` outcome are recorded in `PHASE_1A_RERUN.md`.
+
 ## Repository gates
 
 | Repository | Root | Branch | HEAD | Initial status |

@@ -1,8 +1,20 @@
 # Python and LEAN compatibility at `cd52034dd`
 
+## Runtime decision amendment
+
+ADR-0010, accepted 2026-07-27, supersedes only the Python-version portion of ADR-0001:
+
+- LEAN/release baseline: Python 3.11.11.
+- Chainna compatibility: Python `>=3.11,<3.13`.
+- CI: Python 3.11 and 3.12.
+- Python 3.12: secondary development compatibility target.
+- Product code: no Python 3.12-only syntax, APIs or semantics.
+
+The original Phase 0 Python 3.12 decision is retained in ADR-0001 and the decision register as amended history.
+
 ## Conclusion
 
-Python 3.12 is suitable for an isolated Chainna domain environment on this host, but this pinned LEAN checkout does **not** document Python 3.12 as supported. Its local instructions and official foundation/CI image specify Python 3.11.11. The actual Python 3.12-to-QuantConnect-pythonnet-to-.NET boundary could not be executed because .NET is absent and building LEAN was prohibited. Python 3.12 support is therefore unproven, not failed.
+This pinned LEAN checkout documents Python 3.11.11 and uses it in the official foundation/CI image. Python 3.11.11 is now the accepted canonical boundary. Python 3.12 remains unproven at the QuantConnect.pythonnet boundary, not failed. Phase 1A-R could not rerun either boundary because the host had only 7.19 GiB free, below the 25 GiB operational threshold.
 
 ## Evidence from the pinned checkout
 
@@ -64,7 +76,20 @@ A `uv` environment is technically a standard virtual environment (`pyvenv.cfg` a
 7. **Binary conflicts:** likely risk. The official image pins many compiled packages against Python 3.11, including NumPy/SciPy/Pandas and ML libraries (`DockerfileLeanFoundation:46-140`). Wheels/native ABI availability can differ under 3.12.
 8. **Windows versus Linux:** materially different. Windows needs a matching `python311.dll`/`PYTHONNET_PYDLL` and locally installed .NET; official CI/container is Ubuntu/Conda with `libpython3.11.so`. Windows site-package discovery is a documented issue (`Algorithm.Python/readme.md:135-138`).
 9. **Lowest-risk arrangement:** Phase 1 domain work may use isolated Python 3.12 `uv` without LEAN imports. Before Phase 3, use the official Linux/container Python 3.11 baseline, pin image/build provenance, and prove external-package loading. Test 3.12 only in a separate evidence matrix.
-10. **ADR 0001:** no immediate amendment can be justified without the executable boundary test. Retain it provisionally for domain work, but Phase 3 must not assume 3.12. If the official container/QuantConnect pythonnet boundary cannot pass on 3.12, amend the LEAN-adapter runtime to 3.11 while allowing the runtime-independent core decision to be reviewed separately.
+10. **Runtime decision:** ADR-0010 now makes Python 3.11.11 canonical for LEAN/release work and supports `>=3.11,<3.13` for Chainna. Python 3.12 is secondary and cannot determine release compatibility.
+
+## Phase 1A-R resource gate
+
+On 2026-07-27 the canonical host had:
+
+- 7.19 GiB free on `C:` (threshold: 25 GiB);
+- 5.94 GiB total RAM and approximately 0.39 GiB available at inspection;
+- WSL 2 installed, but no Linux distribution;
+- no Docker Desktop/client/server/Compose;
+- no .NET SDK/runtime; and
+- no installed Python 3.11 interpreter.
+
+No Python environments, container, .NET toolchain or LEAN build were provisioned. The outcome is `BLOCKED_RESOURCE`.
 
 ## Windows host findings
 

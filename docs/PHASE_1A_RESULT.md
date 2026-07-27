@@ -1,8 +1,16 @@
 # Phase 1A result
 
-## Outcome
+## Current outcome
 
-**BLOCKED: environment or dependency problem prevents a conclusion.**
+**BLOCKED_RESOURCE**
+
+Phase 1A-R on 2026-07-27 stopped at the mandatory resource gate: 7.19 GiB was free on the workspace drive, below the Chainna 25 GiB threshold. Docker and .NET were also absent. No runtime environments, container or build were provisioned.
+
+ADR-0010 nevertheless resolves the architecture decision: Python 3.11.11 is canonical for LEAN/release work; Chainna supports `>=3.11,<3.13`; Python 3.12 is secondary.
+
+## Original Phase 1A outcome
+
+**BLOCKED: environment or dependency problem prevented a conclusion.**
 
 Python 3.12.4 and `uv 0.11.32` successfully created and recreated an isolated environment and imported a trivial local package outside the LEAN tree. Static inspection shows that the pinned LEAN runtime officially uses Python 3.11.11, .NET 10 and `QuantConnect.pythonnet` 2.0.64.
 
@@ -34,16 +42,9 @@ The task explicitly forbids marking `PASS` from static evidence alone. `BLOCKED`
 - `AlgorithmImports`/assembly loading from an external Chainna package.
 - Windows/Linux parity.
 
-## ADR 0001 disposition
+## ADR disposition
 
-ADR 0001 does **not yet require amendment**, because Python 3.12 did not fail at the LEAN boundary; that boundary was unavailable. Python 3.12 may be retained for runtime-independent Phase 1 domain/tooling work only.
-
-Before Phase 3, a separately authorized containerized compatibility test must compare:
-
-1. the official Python 3.11.11 baseline; and
-2. Python 3.12 against the exact pinned QuantConnect pythonnet/LEAN build.
-
-If 3.12 cannot pass without patching LEAN or undocumented binary pins, ADR 0001 must be amended so the LEAN adapter runtime uses Python 3.11.
+ADR-0010 supersedes ADR-0001's Python-version portion. Python 3.11.11 is canonical for the LEAN adapter, release and container; 3.12 remains a secondary compatibility target.
 
 ## Safety confirmation
 
