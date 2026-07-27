@@ -29,7 +29,7 @@ Values are configurable only within hard ceilings established after research; no
 
 - Risk per trade capped as a fraction of current reconciled equity.
 - Position size derived from stop distance, pip/tick value, quote/account-currency conversion and estimated costs.
-- Mandatory protective stop or explicit approved alternative; stop must be valid and transmitted/confirmed.
+- Mandatory protective stop for every risk-increasing order, with no initial exception; the stop must be valid and transmitted/confirmed.
 - Maximum gross leverage and margin usage.
 - Maximum aggregate open risk (sum of stop-based loss estimates).
 - Maximum net and gross exposure per currency, pair, correlated group and strategy.
