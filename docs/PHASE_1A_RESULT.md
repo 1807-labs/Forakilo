@@ -6,6 +6,8 @@
 
 Phase 1A-R on 2026-07-27 stopped at the mandatory resource gate: 7.19 GiB was free on the workspace drive, below the Chainna 25 GiB threshold. Docker and .NET were also absent. No runtime environments, container or build were provisioned.
 
+ADR-0011 preserves this result while clarifying that it was not a failed architecture. The remaining executable verification is deferred, not waived. Runtime-independent Phase 1B may proceed only after its separate entry criteria pass because the product core is designed not to depend on LEAN or pythonnet. Phase 3 remains blocked until the executable boundary succeeds twice reproducibly.
+
 ADR-0010 nevertheless resolves the architecture decision: Python 3.11.11 is canonical for LEAN/release work; Chainna supports `>=3.11,<3.13`; Python 3.12 is secondary.
 
 ## Original Phase 1A outcome
@@ -58,3 +60,5 @@ ADR-0010 supersedes ADR-0001's Python-version portion. Python 3.11.11 is canonic
 - `engine/lean/` and `legacy/chains/` remained unmodified.
 
 Phase 1A stops here. The Phase 1 repository scaffold and safety foundation have not begun.
+
+ADR-0011 subsequently authorized the sequencing of a later Phase 1B, not its immediate start.

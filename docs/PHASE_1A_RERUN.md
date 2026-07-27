@@ -8,6 +8,8 @@ Rerun date: 2026-07-27.
 
 The pinned LEAN/pythonnet probe did not start because the canonical workspace drive had 7.19 GiB free, below the Chainna operational threshold of 25 GiB.
 
+ADR-0011 preserves this history. Phase 1A-R was not a failed architecture: its executable verification is deferred to the Phase 3 entrance gate and is not waived. Runtime-independent Phase 1B has a separate 10 GiB local floor (12 GiB preferred); the 25 GiB threshold applies only to local container, LEAN-build and data-intensive work.
+
 ## Mandatory repository verification
 
 | Repository | Resolved path | Branch | HEAD | Status |
@@ -84,6 +86,8 @@ The prior Phase 1A Python 3.12.4 `uv` probe remains historical evidence only.
 - QuantConnect.pythonnet boundary run 1: not attempted.
 - QuantConnect.pythonnet boundary run 2: not attempted.
 - Repeatability conclusion: no conclusion; prerequisite gate failed.
+
+Phase 3 remains blocked until both reproducible boundary runs succeed using the exact pinned runtime on an approved Linux/container environment.
 
 No unrelated/latest image was used as evidence.
 

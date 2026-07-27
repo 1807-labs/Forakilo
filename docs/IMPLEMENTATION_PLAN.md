@@ -28,7 +28,9 @@ Review these documents and decide:
 
 Deliverable: signed architecture decision records and an approved scope. No code before this gate.
 
-## Phase 1 — repository and safety foundation
+## Phase 1B — repository and deterministic Python foundation
+
+ADR-0011 permits this runtime-independent phase while the LEAN/pythonnet executable verification remains deferred. Local work requires at least 10 GiB free, with 12 GiB preferred. Below 10 GiB, dependency installation and test runs stop.
 
 - Establish package, lint/type/test tooling and dependency locking.
 - Add secret scanning, dependency/license checks and CI.
@@ -36,8 +38,10 @@ Deliverable: signed architecture decision records and an approved scope. No code
 - Define versioned event schemas, IDs, UTC/time semantics and experiment manifest.
 - Add a build-time safety test proving no practice/live adapter or credential is loaded by default.
 - Add repository rules that reject secrets and generated run outputs.
+- Provision Python 3.11.11 through `uv` and keep package compatibility at `>=3.11,<3.13`.
+- Enforce that the domain core does not import QuantConnect, pythonnet, LEAN or brokerage packages.
 
-Exit criteria: reproducible clean build; schemas validated; safety tests prove orders cannot be submitted.
+Exit criteria: reproducible clean build on the runtime-independent foundation; schemas validated; import-boundary checks pass; safety tests prove orders cannot be submitted.
 
 ## Phase 2 — harmonic core and Sandy characterization
 
@@ -51,6 +55,8 @@ Exit criteria: reproducible clean build; schemas validated; safety tests prove o
 Exit criteria: deterministic cross-run results, full boundary tests, and an explicit parity report explaining every intentional difference from Sandy.
 
 ## Phase 3 — LEAN research/backtest adapter
+
+Phase 3 entrance is blocked until the exact pinned LEAN/.NET/Python 3.11.11/QuantConnect.pythonnet boundary initializes and imports the external probe twice reproducibly on an approved Linux/container environment. This may be local after resources are available, a controlled remote Linux host or a version-pinned CI runner. An unrelated latest LEAN image is not evidence.
 
 - Pin LEAN commit/build/container and record it in manifests.
 - Create thin Chainna algorithm entry points outside the LEAN tree.
