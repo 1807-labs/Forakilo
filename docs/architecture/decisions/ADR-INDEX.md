@@ -21,3 +21,10 @@ Unresolved decisions: final hosting, paid provider contracts, and exact package 
 | [ADR-0008](ADR-0008-backtesting-and-simulation.md) | Dual research and event-driven backtesting path | Accepted |
 | [ADR-0009](ADR-0009-provider-integration-strategy.md) | Direct provider integration strategy | Accepted |
 | [ADR-0010](ADR-0010-secure-sdlc-and-supply-chain.md) | Secure SDLC and supply-chain baseline | Accepted |
+| [ADR-0011](ADR-0011-python-311-lean-boundary.md) | Python 3.11 lean boundary | Accepted |
+| [ADR-0012](ADR-0012-provider-neutral-bot-integration.md) | Provider-neutral bot integration | Accepted |
+| [ADR-0013](ADR-0013-durable-notification-outbox.md) | Durable notification outbox | Accepted |
+| [ADR-0014](ADR-0014-read-only-bot-command-boundary.md) | Read-only bot command boundary | Accepted |
+| [ADR-0015](ADR-0015-telegram-local-delivery.md) | Telegram local delivery | Accepted |
+| [ADR-0016](ADR-0016-discord-interaction-model.md) | Discord interaction model | Accepted |
+| [ADR-0017](ADR-0017-noesis-compatible-contracts.md) | Noesis-compatible contracts | Accepted |
