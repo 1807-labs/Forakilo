@@ -16,7 +16,10 @@
       "bundle_path": "<MIGRATION_BACKUP_ROOT>/Chainna-all-refs.bundle",
       "bytes": 67727,
       "sha256": "C2A72EFB0950A07274C84F91656A1429F1E97FA567511F58D1BE1A6FDF733591",
-      "verification": "PASS"
+      "verification": "PASS",
+      "public_archive_ref": "archive/chainna-final",
+      "public_tag": "migration/chainna-final",
+      "publication": "PASS"
     },
     {
       "repository": "<PRIVATE_ANNOTATION_SOURCE_REPOSITORY>",
@@ -30,7 +33,10 @@
       "bundle_path": "<PRIVATE_BACKUP_PATH>",
       "bytes": 9445,
       "sha256": "9D60B27A5315AE5588B8C2C636C952A113A3D943F74518F5955922660D91F7CE",
-      "verification": "PASS"
+      "verification": "PASS",
+      "public_archive_ref": null,
+      "public_tag": null,
+      "publication": "PROHIBITED_PRIVATE_HISTORY"
     },
     {
       "repository": "vebbaybi/Chains",
@@ -46,7 +52,10 @@
       "bundle_path": "<MIGRATION_BACKUP_ROOT>/Chains-all-refs.bundle",
       "bytes": 849915,
       "sha256": "89C8A190E122D9C08BB05C1609718CB8D1E7B59D4E96FF2305251F22387E93A0",
-      "verification": "PASS"
+      "verification": "PASS",
+      "public_archive_ref": "archive/chains-reference",
+      "public_tag": "migration/chains-reference",
+      "publication": "PASS"
     }
   ],
   "lean": {

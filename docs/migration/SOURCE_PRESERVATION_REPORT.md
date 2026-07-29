@@ -22,8 +22,18 @@ LEAN was not bundled. It remains an external fork pinned at
 scan stalls, it must remain untouched and its worktree cleanliness is
 unresolved.
 
-Archive refs were not created or pushed because the prerequisite public
-Forakilo `main` push was blocked by disclosure review. No history was merged.
+## Public archive publication
+
+Only the two public source histories were imported. No history was merged into
+`main`.
+
+| Source | Archive ref | Tag | Commit | Push |
+|---|---|---|---|---|
+| Chainna | `archive/chainna-final` | `migration/chainna-final` | `ca663f8c250a175273a7243e424c19fa1069bb85` | PASS |
+| Chains | `archive/chains-reference` | `migration/chains-reference` | `6ada073d6793431c376b942ef45a73000fe781f2` | PASS |
+
+The private annotation-source bundle was verified again but its history,
+branch, tag, bundle, backup ref, and exact identity were not pushed.
 
 ## Private evidence integrity
 
