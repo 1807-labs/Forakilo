@@ -1,0 +1,4 @@
+# The legacy completion report contained an already-published workstation path.
+# Keep its sanitized content while preventing that removed value from being
+# repeated in public textual commit patches.
+COMPLETION_REPORT.md -diff

@@ -3,7 +3,8 @@
 Purpose: report the completed pre-development documentation baseline.
 Scope: repository findings, created/modified files, architecture decisions, scope, risks, backlog, validation, and unresolved decisions.
 Audience: repository owner, maintainers, reviewers, and future implementers.
-Assumptions: final verification was run locally on 2026-07-04 in `C:\Users\Wildf\Forakilo`.
+Assumptions: final verification was run locally on 2026-07-04 in
+`<FORAKILO_WORKTREE>`.
 Dependencies: [Documentation Index](DOCUMENTATION_INDEX.md), [Sources](docs/research/SOURCES.md).
 Unresolved decisions: listed at the end of this report.
 

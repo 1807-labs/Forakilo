@@ -1,0 +1,43 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "forakilo"
+version = "0.1.0"
+description = "Deterministic quantitative research and paper-trading core"
+requires-python = ">=3.11,<3.13"
+license = { file = "LICENSE" }
+dependencies = []
+
+[dependency-groups]
+dev = [
+  "coverage>=7.6,<8",
+  "pre-commit>=4,<5",
+  "pyright>=1.1.400,<2",
+  "pytest>=8.3,<9",
+  "ruff>=0.11,<1",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/forakilo"]
+
+[tool.pytest.ini_options]
+addopts = "-ra --strict-config --strict-markers"
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "RUF", "S"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["S101"]
+"scripts/verify_lean.py" = ["S603", "S607"]
+
+[tool.pyright]
+include = ["src", "tests"]
+pythonVersion = "3.11"
+typeCheckingMode = "strict"
