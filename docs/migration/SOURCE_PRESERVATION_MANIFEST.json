@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.0.0",
+  "created_at": "2026-07-29T19:57:32Z",
+  "backup_root": "<MIGRATION_BACKUP_ROOT>",
+  "bundles": [
+    {
+      "repository": "vebbaybi/Chainna",
+      "source_path": "<LOCAL_SOURCE_PATH>",
+      "source_remote": "https://github.com/vebbaybi/Chainna.git",
+      "source_head": "ca663f8c250a175273a7243e424c19fa1069bb85",
+      "included_refs": {
+        "HEAD": "ca663f8c250a175273a7243e424c19fa1069bb85",
+        "refs/heads/main": "ca663f8c250a175273a7243e424c19fa1069bb85",
+        "refs/remotes/origin/main": "ca663f8c250a175273a7243e424c19fa1069bb85"
+      },
+      "bundle_path": "<MIGRATION_BACKUP_ROOT>/Chainna-all-refs.bundle",
+      "bytes": 67727,
+      "sha256": "C2A72EFB0950A07274C84F91656A1429F1E97FA567511F58D1BE1A6FDF733591",
+      "verification": "PASS"
+    },
+    {
+      "repository": "<PRIVATE_ANNOTATION_SOURCE_REPOSITORY>",
+      "source_path": "<PRIVATE_BACKUP_PATH>",
+      "source_remote": "<PRIVATE_ANNOTATION_SOURCE_REPOSITORY>",
+      "source_head": "6e461471eb4d18fafe9690953ca1edd3d227817b",
+      "included_refs": {
+        "HEAD": "6e461471eb4d18fafe9690953ca1edd3d227817b",
+        "refs/heads/main": "6e461471eb4d18fafe9690953ca1edd3d227817b"
+      },
+      "bundle_path": "<PRIVATE_BACKUP_PATH>",
+      "bytes": 9445,
+      "sha256": "9D60B27A5315AE5588B8C2C636C952A113A3D943F74518F5955922660D91F7CE",
+      "verification": "PASS"
+    },
+    {
+      "repository": "vebbaybi/Chains",
+      "source_path": "<LOCAL_SOURCE_PATH>",
+      "source_remote": "https://github.com/vebbaybi/Chains.git",
+      "source_head": "6ada073d6793431c376b942ef45a73000fe781f2",
+      "included_refs": {
+        "HEAD": "6ada073d6793431c376b942ef45a73000fe781f2",
+        "refs/heads/main": "6ada073d6793431c376b942ef45a73000fe781f2",
+        "refs/remotes/origin/HEAD": "6ada073d6793431c376b942ef45a73000fe781f2",
+        "refs/remotes/origin/main": "6ada073d6793431c376b942ef45a73000fe781f2"
+      },
+      "bundle_path": "<MIGRATION_BACKUP_ROOT>/Chains-all-refs.bundle",
+      "bytes": 849915,
+      "sha256": "89C8A190E122D9C08BB05C1609718CB8D1E7B59D4E96FF2305251F22387E93A0",
+      "verification": "PASS"
+    }
+  ],
+  "lean": {
+    "repository": "vebbaybi/Lean",
+    "source_path": "<EXTERNAL_LEAN_CHECKOUT>",
+    "source_remote": "https://github.com/vebbaybi/Lean.git",
+    "branch": "master",
+    "head": "cd52034ddf55c0c9aa57264d2a148e563924100f",
+    "bundle_required": false,
+    "worktree_cleanliness": "UNRESOLVED_CLOUD_SYNCED_SCAN"
+  },
+  "private_evidence_sha256": {
+    "PRIVATE_BUNDLE_LOCATION_MANIFEST.json": "BEC167CB72EE7F58669C537C8688AB9717FB60DB665C5452D8313284DE2631D1",
+    "PRIVATE_LOCAL_WORKSPACE_INVENTORY.md": "0B86B76120BA8F64C5E79F49170C32293F8A6652894139070CC5F22A30F1EC2A",
+    "PRIVATE_MIGRATION_PATH_MAP.md": "D5149ACE79384C89E37C9B5E0841D6064F6F7B0810B181EF5C97CA2CBBF28BB6",
+    "PRIVATE_SOURCE_REPOSITORY_MAP.md": "667BE828CDAEC267873FFC9B2D20DA48A8A516D4B76A5B2BEB61EF5C87A4B0A9"
+  }
+}
+
