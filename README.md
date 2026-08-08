@@ -1,5 +1,33 @@
 # Forakilo
 
+## For8killo MVP
+
+For8killo is the self-hosted product and Foreight is its evidence-led financial
+intelligence. The current MVP provides:
+
+- deterministic market-structure, liquidity-sweep, imbalance, volatility, and regime analysis;
+- cost-, freshness-, exposure-, regime-, and uncertainty-aware opportunity ranking;
+- synthetic local forex, commodity, and crypto data for development only;
+- fail-closed risk controls and idempotent paper execution;
+- a FastAPI interface plus provider-neutral Telegram and Discord notifications;
+- executable behavior specifications in `features/`.
+
+No profitability is guaranteed. Live-money execution and messaging-based trade mutation are
+intentionally unavailable.
+
+### Run locally
+
+```powershell
+uv sync --all-groups
+uv run uvicorn forakilo.api:app --reload
+```
+
+Open `http://127.0.0.1:8000/docs`, or request an analysis from
+`/api/v1/analysis/EUR_USD`. The bundled provider is deterministic synthetic data and is clearly
+identified as such; replace it with an approved licensed provider before making real decisions.
+
+Validate with `uv run pytest`, `uv run behave`, `uv run ruff check .`, and `uv run pyright`.
+
 Forakilo is a pre-development repository for an authenticated AI-assisted quantitative market-analysis and paper-trading platform for cryptocurrency and foreign-exchange markets.
 
 The project is currently a documentation and planning baseline. No production application code, dashboard, trading engine, market-data connector, model pipeline, broker/exchange integration, CI workflow, tests, or deployed service is implemented in this repository yet.
