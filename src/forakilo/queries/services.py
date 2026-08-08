@@ -44,9 +44,14 @@ class QueryService:
         }
     )
 
+    def __init__(self, backend: QueryBackend | None = None) -> None:
+        self._backend = backend
+
     def execute(self, query: str, arguments: tuple[str, ...] = ()) -> QueryResult:
         if query not in self._KNOWN:
             return QueryResult(Availability.NOT_IMPLEMENTED, "Unknown query.")
+        if self._backend is not None:
+            return self._backend.execute(query, arguments)
         return QueryResult(
             Availability.NOT_AVAILABLE,
             f"{query} is not available in this installation.",

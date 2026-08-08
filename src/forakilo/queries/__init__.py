@@ -1,5 +1,6 @@
 """Typed read-only application queries."""
 
-from .services import QueryResult, QueryService
+from .application import ApplicationQueryBackend
+from .services import Availability, QueryResult, QueryService
 
-__all__ = ["QueryResult", "QueryService"]
+__all__ = ["ApplicationQueryBackend", "Availability", "QueryResult", "QueryService"]
