@@ -1,15 +1,18 @@
-# Forakilo Documentation Index
+# For8killo Documentation Index
 
-Purpose: provide the pre-development documentation map for Forakilo.
+Purpose: provide the product, implementation, governance, and operations documentation map.
 Scope: repository foundation, product intent, architecture, security, data, ML, trading, compliance, operations, engineering, roadmap, and backlog documents.
 Audience: maintainers, product owners, engineers, reviewers, risk approvers, security reviewers, and legal counsel.
-Assumptions: Forakilo is pre-development; Canada is the initial research jurisdiction; live trading is out of scope until gates are met.
+Assumptions: the working MVP is self-hosted and paper/practice-first; Canada is the initial research jurisdiction; live trading is out of scope until separate gates are met.
 Dependencies: [README.md](README.md), [docs/research/SOURCES.md](docs/research/SOURCES.md), [docs/product/GLOSSARY.md](docs/product/GLOSSARY.md).
 Unresolved decisions: legal operating permissions, provider contracts, hosting region, and final commercial licensing model require owner or counsel input.
 
 ## Repository Status
 
-Forakilo currently contains documentation and backlog artifacts only. No production application code, tests, dependency manifests, workflows, containers, deployed infrastructure, brokerage accounts, or exchange integrations were verified as implemented on 2026-07-04.
+For8killo now contains a working Python 3.11/3.12 application, authenticated FastAPI surface,
+operator console, deterministic intelligence and risk engines, paper/practice execution,
+portfolio reconciliation, bot integrations, tests, CI, and a non-root container. It does not ship
+broker accounts, licensed data, hosted infrastructure, or a live-money execution route.
 
 ## Start Here
 
@@ -20,6 +23,7 @@ Forakilo currently contains documentation and backlog artifacts only. No product
 - [Delivery Roadmap](docs/roadmap/DELIVERY_ROADMAP.md)
 - [Security Policy](SECURITY.md)
 - [Completion Report](COMPLETION_REPORT.md)
+- [MVP Implementation Evidence](docs/product/MVP_IMPLEMENTATION_EVIDENCE.md)
 
 ## Research and Decisions
 

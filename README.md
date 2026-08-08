@@ -10,6 +10,7 @@ command.
 The current MVP includes:
 
 - deterministic market-structure, liquidity-sweep, imbalance, volatility, and regime analysis;
+- explainable trend, momentum, breakout, mean-reversion, harmonic, and multi-timeframe research;
 - cost-, freshness-, exposure-, regime-, and uncertainty-aware signal ranking;
 - synthetic local FX, commodity, and crypto data for deterministic development;
 - point-in-time backtesting with next-bar fills, explicit friction, sizing, and drawdown metrics;
@@ -67,9 +68,12 @@ authorization.
 
 ## Documentation
 
-Start with the [documentation index](DOCUMENTATION_INDEX.md), [system architecture](docs/architecture/SYSTEM_ARCHITECTURE.md),
-[risk policy](docs/trading/RISK_MANAGEMENT_POLICY.md), [MVP exit criteria](docs/roadmap/MVP_SCOPE_AND_EXIT_CRITERIA.md),
-and [security policy](SECURITY.md).
+Start with the [documentation index](DOCUMENTATION_INDEX.md),
+[implementation evidence](docs/product/MVP_IMPLEMENTATION_EVIDENCE.md),
+[system architecture](docs/architecture/SYSTEM_ARCHITECTURE.md),
+[risk policy](docs/trading/RISK_MANAGEMENT_POLICY.md),
+[MVP exit criteria](docs/roadmap/MVP_SCOPE_AND_EXIT_CRITERIA.md), and
+[security policy](SECURITY.md).
 
 ## License
 
