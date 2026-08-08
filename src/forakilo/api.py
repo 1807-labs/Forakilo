@@ -3,7 +3,9 @@
 from __future__ import annotations
 
 import os
+from dataclasses import asdict
 from decimal import Decimal
+from pathlib import Path
 from typing import Annotated
 
 from fastapi import Depends, FastAPI, Header, HTTPException
@@ -13,12 +15,16 @@ from pydantic import BaseModel, Field
 from forakilo.application import ForeightService
 from forakilo.dashboard import DASHBOARD_HTML
 from forakilo.marketdata.local import LocalMarketDataProvider
+from forakilo.operations import OperationalControls
 from forakilo.security import ApiKeyAuthenticator, Principal
 
 app = FastAPI(
     title="For8killo", version="0.1.0", description="Foreight paper-trading market intelligence"
 )
 service = ForeightService(LocalMarketDataProvider())
+controls = OperationalControls(
+    Path(os.getenv("FOR8KILLO_STATE_PATH", ".state")) / "operations.sqlite3"
+)
 authenticator = ApiKeyAuthenticator()
 configured_key = os.getenv("FOR8KILLO_API_KEY")
 if configured_key:
@@ -30,7 +36,15 @@ if configured_key:
             Principal(
                 "local-operator",
                 "operator",
-                frozenset({"market:read", "portfolio:read", "conversation:use"}),
+                frozenset(
+                    {
+                        "market:read",
+                        "portfolio:read",
+                        "conversation:use",
+                        "operations:read",
+                        "operations:control",
+                    }
+                ),
             ),
         )
 
@@ -45,6 +59,11 @@ class ProposalRequest(BaseModel):
     account_id: str = Field(min_length=1, max_length=128)
     equity: Decimal = Field(gt=0)
     risk_fraction: Decimal = Field(gt=0, le=Decimal("0.02"))
+
+
+class KillSwitchRequest(BaseModel):
+    active: bool
+    reason: str = Field(min_length=8, max_length=500)
 
 
 def require_scope(scope: str):
@@ -66,11 +85,41 @@ def require_scope(scope: str):
 
 MarketReader = Annotated[Principal, Depends(require_scope("market:read"))]
 PortfolioReader = Annotated[Principal, Depends(require_scope("portfolio:read"))]
+OperationsReader = Annotated[Principal, Depends(require_scope("operations:read"))]
+OperationsController = Annotated[Principal, Depends(require_scope("operations:control"))]
 
 
 @app.get("/health")
 def health() -> dict[str, str]:
-    return {"status": "healthy", "mode": "paper", "agent": "Foreight"}
+    status = controls.status()
+    return {
+        "status": "healthy",
+        "mode": status.mode,
+        "agent": "Foreight",
+        "kill_switch": "active" if status.kill_switch_active else "clear",
+    }
+
+
+@app.get("/api/v1/operations/status")
+def operational_status(_principal: OperationsReader) -> dict[str, object]:
+    return asdict(controls.status())
+
+
+@app.get("/api/v1/operations/audit")
+def operational_audit(
+    _principal: OperationsReader, limit: int = 100
+) -> tuple[dict[str, object], ...]:
+    try:
+        return tuple(asdict(event) for event in controls.audit(limit))
+    except ValueError as error:
+        raise HTTPException(status_code=422, detail=str(error)) from error
+
+
+@app.put("/api/v1/operations/kill-switch")
+def set_kill_switch(
+    request: KillSwitchRequest, principal: OperationsController
+) -> dict[str, object]:
+    return asdict(controls.set_kill_switch(request.active, principal.principal_id, request.reason))
 
 
 @app.get("/", response_class=HTMLResponse)
