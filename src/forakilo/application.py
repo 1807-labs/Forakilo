@@ -3,16 +3,21 @@
 from __future__ import annotations
 
 from dataclasses import asdict
+from datetime import UTC, datetime
+from decimal import Decimal
 from typing import Any
 
 from forakilo.intelligence.market import SmartMoneyAnalyzer
 from forakilo.marketdata.contracts import MarketDataProvider
+from forakilo.signals import SignalPipeline, SignalStore
 
 
 class ForeightService:
     def __init__(self, market_data: MarketDataProvider) -> None:
         self._market_data = market_data
         self._analyzer = SmartMoneyAnalyzer()
+        self._pipeline = SignalPipeline()
+        self._signals = SignalStore()
 
     def instruments(self) -> tuple[dict[str, str], ...]:
         return tuple(
@@ -51,3 +56,48 @@ class ForeightService:
             }
         )
         return result
+
+    def generate_signal(self, symbol: str, interval_seconds: int = 3600) -> dict[str, Any]:
+        instrument = next(
+            (
+                item
+                for item in self._market_data.discover_instruments()
+                if item.instrument_id.symbol == symbol
+            ),
+            None,
+        )
+        if instrument is None:
+            raise KeyError(symbol)
+        history = self._market_data.get_history(instrument.instrument_id, interval_seconds, 100)
+        evidence = self._analyzer.analyze(history)
+        signal = self._pipeline.create(
+            instrument,
+            self._market_data.get_quote(instrument.instrument_id),
+            evidence,
+            f"{interval_seconds}s",
+            datetime.now(UTC),
+        )
+        self._signals.append(signal)
+        return asdict(signal)
+
+    def ranked_signals(self) -> tuple[dict[str, Any], ...]:
+        active = self._signals.active_at(datetime.now(UTC))
+        return tuple(asdict(item) for item in self._pipeline.rank(active))
+
+    def prepare_paper_proposal(
+        self,
+        signal_id: str,
+        account_id: str,
+        equity: Decimal,
+        risk_fraction: Decimal,
+    ) -> dict[str, Any]:
+        ranked = self._pipeline.rank(self._signals.active_at(datetime.now(UTC)))
+        selected = next(
+            (item for item in ranked if item.signal.identity.event_id == signal_id), None
+        )
+        if selected is None:
+            raise KeyError(signal_id)
+        proposal = self._pipeline.prepare_paper_proposal(
+            selected, account_id, equity, risk_fraction, datetime.now(UTC)
+        )
+        return asdict(proposal)

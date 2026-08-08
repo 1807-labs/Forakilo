@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import os
+from decimal import Decimal
 from typing import Annotated
 
 from fastapi import Depends, FastAPI, Header, HTTPException
@@ -39,6 +40,13 @@ class ConversationRequest(BaseModel):
     question: str = Field(min_length=1, max_length=2000)
 
 
+class ProposalRequest(BaseModel):
+    signal_id: str = Field(min_length=1, max_length=128)
+    account_id: str = Field(min_length=1, max_length=128)
+    equity: Decimal = Field(gt=0)
+    risk_fraction: Decimal = Field(gt=0, le=Decimal("0.02"))
+
+
 def require_scope(scope: str):
     def dependency(
         authorization: Annotated[str | None, Header()] = None,
@@ -57,6 +65,7 @@ def require_scope(scope: str):
 
 
 MarketReader = Annotated[Principal, Depends(require_scope("market:read"))]
+PortfolioReader = Annotated[Principal, Depends(require_scope("portfolio:read"))]
 
 
 @app.get("/health")
@@ -84,3 +93,28 @@ def analyze(
         raise HTTPException(status_code=404, detail="instrument not supported") from error
     except ValueError as error:
         raise HTTPException(status_code=422, detail=str(error)) from error
+
+
+@app.post("/api/v1/signals/{symbol}")
+def generate_signal(symbol: str, _principal: MarketReader) -> dict[str, object]:
+    try:
+        return service.generate_signal(symbol.upper())
+    except KeyError as error:
+        raise HTTPException(status_code=404, detail="instrument not supported") from error
+
+
+@app.get("/api/v1/signals")
+def ranked_signals(_principal: MarketReader) -> tuple[dict[str, object], ...]:
+    return service.ranked_signals()
+
+
+@app.post("/api/v1/paper-proposals")
+def prepare_paper_proposal(
+    request: ProposalRequest, _principal: PortfolioReader
+) -> dict[str, object]:
+    try:
+        return service.prepare_paper_proposal(
+            request.signal_id, request.account_id, request.equity, request.risk_fraction
+        )
+    except KeyError as error:
+        raise HTTPException(status_code=404, detail="eligible ranked signal not found") from error
