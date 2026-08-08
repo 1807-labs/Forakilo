@@ -33,3 +33,11 @@ def test_application_exposes_truthful_query_and_empty_portfolio_projections() ->
     assert portfolio["mode"] == "paper"
     assert portfolio["positions"] == ()
     assert portfolio["performance"]["closed_trades"] == 0
+
+
+def test_application_exposes_multi_strategy_research_without_execution_authority() -> None:
+    service = ForeightService(LocalMarketDataProvider(seed=4))
+    result = service.strategy_research("BTC_USD")
+    assert len(result["candidates"]) == 5
+    assert result["multi_timeframe"]["agreement"] >= Decimal("0.5")
+    assert result["execution_authority"] is False

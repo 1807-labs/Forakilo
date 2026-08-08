@@ -8,6 +8,7 @@ from decimal import Decimal
 from typing import Any
 
 from forakilo.intelligence.market import SmartMoneyAnalyzer
+from forakilo.intelligence.strategies import TechnicalStrategyEngine
 from forakilo.marketdata.contracts import MarketDataProvider
 from forakilo.portfolio import PortfolioLedger
 from forakilo.queries import ApplicationQueryBackend, QueryService
@@ -18,6 +19,7 @@ class ForeightService:
     def __init__(self, market_data: MarketDataProvider) -> None:
         self._market_data = market_data
         self._analyzer = SmartMoneyAnalyzer()
+        self._strategies = TechnicalStrategyEngine()
         self._pipeline = SignalPipeline()
         self._signals = SignalStore()
         self._portfolio = PortfolioLedger()
@@ -70,6 +72,31 @@ class ForeightService:
             }
         )
         return result
+
+    def strategy_research(self, symbol: str) -> dict[str, Any]:
+        instrument = next(
+            (
+                item
+                for item in self._market_data.discover_instruments()
+                if item.instrument_id.symbol == symbol
+            ),
+            None,
+        )
+        if instrument is None:
+            raise KeyError(symbol)
+        histories = tuple(
+            (interval, self._market_data.get_history(instrument.instrument_id, interval, 100))
+            for interval in (900, 3600, 14400)
+        )
+        candidates = self._strategies.evaluate(histories[1][1])
+        assessment = self._strategies.assess_timeframes(histories)
+        return {
+            "instrument": symbol,
+            "candidates": tuple(asdict(item) for item in candidates),
+            "multi_timeframe": asdict(assessment),
+            "execution_authority": False,
+            "disclaimer": "Strategy research only; candidates are not trade instructions.",
+        }
 
     def generate_signal(self, symbol: str, interval_seconds: int = 3600) -> dict[str, Any]:
         instrument = next(

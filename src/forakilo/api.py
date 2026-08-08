@@ -154,6 +154,14 @@ def analyze(
         raise HTTPException(status_code=422, detail=str(error)) from error
 
 
+@app.get("/api/v1/strategy-research/{symbol}")
+def strategy_research(symbol: str, _principal: MarketReader) -> dict[str, object]:
+    try:
+        return service.strategy_research(symbol.upper())
+    except KeyError as error:
+        raise HTTPException(status_code=404, detail="instrument not supported") from error
+
+
 @app.post("/api/v1/signals/{symbol}")
 def generate_signal(symbol: str, _principal: MarketReader) -> dict[str, object]:
     try:
