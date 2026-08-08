@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import os
 from dataclasses import dataclass, field
+from pathlib import Path
 
 
 def _bool(value: str | None) -> bool:
@@ -27,10 +28,15 @@ class TelegramConfig:
     signal_chat_id: str | None = None
     risk_chat_id: str | None = None
     system_chat_id: str | None = None
+    command_chat_ids: frozenset[str] = frozenset()
+    polling_timeout_seconds: int = 25
+    offset_path: Path | None = None
 
     def validate(self) -> None:
         if self.enabled and (not self.token or not self.allowed_chat_ids):
             raise ValueError("enabled Telegram requires token and allowed chat IDs")
+        if not 1 <= self.polling_timeout_seconds <= 50:
+            raise ValueError("Telegram polling timeout must be between 1 and 50 seconds")
 
 
 @dataclass(frozen=True, slots=True)
@@ -43,6 +49,8 @@ class DiscordConfig:
     signal_channel_id: str | None = None
     risk_channel_id: str | None = None
     system_channel_id: str | None = None
+    development_guild_id: str | None = None
+    command_sync_enabled: bool = False
 
     def validate(self) -> None:
         if self.enabled and (
@@ -73,6 +81,9 @@ class BotSettings:
             signal_chat_id=_setting("TELEGRAM_SIGNAL_CHAT_ID"),
             risk_chat_id=_setting("TELEGRAM_RISK_CHAT_ID"),
             system_chat_id=_setting("TELEGRAM_SYSTEM_CHAT_ID"),
+            command_chat_ids=_ids(_setting("TELEGRAM_COMMAND_CHAT_IDS")),
+            polling_timeout_seconds=int(_setting("TELEGRAM_POLL_TIMEOUT", "25") or "25"),
+            offset_path=(Path(value) if (value := _setting("TELEGRAM_OFFSET_PATH")) else None),
         )
         discord = DiscordConfig(
             enabled=discord_enabled,
@@ -83,6 +94,8 @@ class BotSettings:
             signal_channel_id=_setting("DISCORD_SIGNAL_CHANNEL_ID"),
             risk_channel_id=_setting("DISCORD_RISK_CHANNEL_ID"),
             system_channel_id=_setting("DISCORD_SYSTEM_CHANNEL_ID"),
+            development_guild_id=_setting("DISCORD_DEVELOPMENT_GUILD_ID"),
+            command_sync_enabled=_bool(_setting("DISCORD_COMMAND_SYNC_ENABLED")),
         )
         telegram.validate()
         discord.validate()
