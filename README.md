@@ -19,10 +19,12 @@ intentionally unavailable.
 
 ```powershell
 uv sync --all-groups
+set FOR8KILLO_API_KEY=local.replace-with-at-least-24-random-characters
 uv run for8killo
 ```
 
-Open `http://127.0.0.1:8000/docs`, or request an analysis from
+Open `http://127.0.0.1:8000/` for the operator landing page and `/docs` for the API. Protected
+requests use `Authorization: Bearer <key-id.secret>`. Request an analysis from
 `/api/v1/analysis/EUR_USD`. The bundled provider is deterministic synthetic data and is clearly
 identified as such; replace it with an approved licensed provider before making real decisions.
 
