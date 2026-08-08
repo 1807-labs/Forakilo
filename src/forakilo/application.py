@@ -9,6 +9,8 @@ from typing import Any
 
 from forakilo.intelligence.market import SmartMoneyAnalyzer
 from forakilo.marketdata.contracts import MarketDataProvider
+from forakilo.portfolio import PortfolioLedger
+from forakilo.queries import ApplicationQueryBackend, QueryService
 from forakilo.signals import SignalPipeline, SignalStore
 
 
@@ -18,6 +20,18 @@ class ForeightService:
         self._analyzer = SmartMoneyAnalyzer()
         self._pipeline = SignalPipeline()
         self._signals = SignalStore()
+        self._portfolio = PortfolioLedger()
+
+    def queries(self) -> QueryService:
+        return QueryService(ApplicationQueryBackend(self._signals, self._portfolio))
+
+    def portfolio(self) -> dict[str, Any]:
+        return {
+            "positions": tuple(asdict(item) for item in self._portfolio.positions()),
+            "closed_trades": tuple(asdict(item) for item in self._portfolio.closed_trades()),
+            "performance": asdict(self._portfolio.performance()),
+            "mode": "paper",
+        }
 
     def instruments(self) -> tuple[dict[str, str], ...]:
         return tuple(

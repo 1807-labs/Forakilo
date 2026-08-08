@@ -14,6 +14,11 @@ from pydantic import BaseModel, Field
 
 from forakilo.application import ForeightService
 from forakilo.dashboard import DASHBOARD_HTML
+from forakilo.intelligence.conversation import (
+    ForeightConversation,
+    ResearchRepository,
+    SQLiteConversationMemory,
+)
 from forakilo.marketdata.local import LocalMarketDataProvider
 from forakilo.operations import OperationalControls
 from forakilo.security import ApiKeyAuthenticator, Principal
@@ -22,8 +27,12 @@ app = FastAPI(
     title="For8killo", version="0.1.0", description="Foreight paper-trading market intelligence"
 )
 service = ForeightService(LocalMarketDataProvider())
-controls = OperationalControls(
-    Path(os.getenv("FOR8KILLO_STATE_PATH", ".state")) / "operations.sqlite3"
+state_path = Path(os.getenv("FOR8KILLO_STATE_PATH", ".state"))
+controls = OperationalControls(state_path / "operations.sqlite3")
+conversation = ForeightConversation(
+    service.queries(),
+    ResearchRepository(),
+    SQLiteConversationMemory(state_path / "conversation.sqlite3"),
 )
 authenticator = ApiKeyAuthenticator()
 configured_key = os.getenv("FOR8KILLO_API_KEY")
@@ -87,6 +96,7 @@ MarketReader = Annotated[Principal, Depends(require_scope("market:read"))]
 PortfolioReader = Annotated[Principal, Depends(require_scope("portfolio:read"))]
 OperationsReader = Annotated[Principal, Depends(require_scope("operations:read"))]
 OperationsController = Annotated[Principal, Depends(require_scope("operations:control"))]
+ConversationUser = Annotated[Principal, Depends(require_scope("conversation:use"))]
 
 
 @app.get("/health")
@@ -155,6 +165,19 @@ def generate_signal(symbol: str, _principal: MarketReader) -> dict[str, object]:
 @app.get("/api/v1/signals")
 def ranked_signals(_principal: MarketReader) -> tuple[dict[str, object], ...]:
     return service.ranked_signals()
+
+
+@app.get("/api/v1/portfolio")
+def portfolio(_principal: PortfolioReader) -> dict[str, object]:
+    return service.portfolio()
+
+
+@app.post("/api/v1/conversations/ask")
+def ask_foreight(request: ConversationRequest, _principal: ConversationUser) -> dict[str, object]:
+    try:
+        return asdict(conversation.ask(request.conversation_id, request.question))
+    except ValueError as error:
+        raise HTTPException(status_code=422, detail=str(error)) from error
 
 
 @app.post("/api/v1/paper-proposals")

@@ -24,3 +24,12 @@ def test_application_proposal_never_creates_live_mode() -> None:
     )
     assert proposal["proposal"]["mode"] == "paper"
     assert proposal["authorization_required"] is True
+
+
+def test_application_exposes_truthful_query_and_empty_portfolio_projections() -> None:
+    service = ForeightService(LocalMarketDataProvider(seed=4))
+    assert service.queries().execute("GetSystemHealth").summary.endswith("healthy.")
+    portfolio = service.portfolio()
+    assert portfolio["mode"] == "paper"
+    assert portfolio["positions"] == ()
+    assert portfolio["performance"]["closed_trades"] == 0
