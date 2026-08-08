@@ -1,6 +1,7 @@
 """Versioned, LEAN-independent domain contracts."""
 
 from .contracts import (
+    AssetClass,
     Candle,
     EventIdentity,
     Instrument,
@@ -13,6 +14,7 @@ from .contracts import (
 )
 
 __all__ = [
+    "AssetClass",
     "Candle",
     "EventIdentity",
     "Instrument",

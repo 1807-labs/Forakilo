@@ -40,6 +40,7 @@ def stable_hash(value: Any) -> str:
 
 
 class AssetClass(StrEnum):
+    COMMODITY = "commodity"
     CRYPTO = "crypto"
     FX = "fx"
 
@@ -160,17 +161,43 @@ class Signal:
     strategy_id: str
     strategy_version: str
     instrument_id: InstrumentId
+    asset_class: AssetClass
+    timeframe: str
     side: Side
+    detected_time: datetime
+    confirmed_time: datetime
     expires_at: datetime
+    entry_zone: str | None
+    invalidation_level: Decimal | None
+    stop_price: Decimal | None
+    target_prices: tuple[Decimal, ...]
+    reward_to_risk: Decimal | None
+    estimated_transaction_costs: Decimal
+    market_regime: str
+    confidence: Decimal | None
+    ranking_score: Decimal | None
+    status: str
+    rejection_reason: str | None
     evidence: tuple[str, ...]
+    supporting_evidence: tuple[str, ...]
     candidate_id: str
 
     def __post_init__(self) -> None:
+        _utc(self.detected_time, "detected_time")
+        _utc(self.confirmed_time, "confirmed_time")
         _utc(self.expires_at, "expires_at")
-        if self.expires_at <= self.identity.known_time:
-            raise ValueError("signal must expire after it becomes known")
+        if self.confirmed_time < self.detected_time:
+            raise ValueError("confirmed_time cannot precede detected_time")
+        if self.expires_at <= self.confirmed_time:
+            raise ValueError("signal must expire after it is confirmed")
+        if self.confirmed_time < self.identity.known_time:
+            raise ValueError("signal known time cannot precede confirmation")
         if not self.evidence:
             raise ValueError("signal evidence is required")
+        if self.stop_price is not None and self.stop_price <= 0:
+            raise ValueError("stop_price must be positive")
+        if self.target_prices and any(price <= 0 for price in self.target_prices):
+            raise ValueError("target prices must be positive")
 
 
 @dataclass(frozen=True, slots=True)
