@@ -3,9 +3,9 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "forakilo"
+name = "for8killo"
 version = "0.1.0"
-description = "Deterministic quantitative research and paper-trading core"
+description = "Foreight-powered market intelligence and paper-trading platform"
 requires-python = ">=3.11,<3.13"
 license = { file = "LICENSE" }
 dependencies = [
@@ -27,7 +27,10 @@ dev = [
 ]
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/forakilo"]
+packages = ["src/forakilo", "src/foreightkillo"]
+
+[project.scripts]
+for8killo = "foreightkillo.cli:main"
 
 [tool.pytest.ini_options]
 addopts = "-ra --strict-config --strict-markers"

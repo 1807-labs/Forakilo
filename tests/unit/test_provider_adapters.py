@@ -113,3 +113,13 @@ def test_disabled_providers_do_not_require_or_read_tokens(
     assert settings.discord.token is None
     TelegramConfig().validate()
     DiscordConfig().validate()
+
+
+def test_for8killo_environment_names_take_precedence(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    monkeypatch.setenv("FOR8KILLO_INSTALLATION_ID", "new-name")
+    monkeypatch.setenv("FORAKILO_INSTALLATION_ID", "legacy-name")
+    monkeypatch.setenv("FOR8KILLO_TELEGRAM_ENABLED", "false")
+    monkeypatch.setenv("FOR8KILLO_DISCORD_ENABLED", "false")
+    assert BotSettings.from_environment().installation_id == "new-name"

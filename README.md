@@ -1,4 +1,4 @@
-# Forakilo
+# For8killo
 
 ## For8killo MVP
 
@@ -19,7 +19,7 @@ intentionally unavailable.
 
 ```powershell
 uv sync --all-groups
-uv run uvicorn forakilo.api:app --reload
+uv run for8killo
 ```
 
 Open `http://127.0.0.1:8000/docs`, or request an analysis from

@@ -14,6 +14,11 @@ def _ids(value: str | None) -> frozenset[str]:
     return frozenset(item.strip() for item in (value or "").split(",") if item.strip())
 
 
+def _setting(name: str, default: str | None = None) -> str | None:
+    current = os.getenv(f"FOR8KILLO_{name}")
+    return current if current is not None else os.getenv(f"FORAKILO_{name}", default)
+
+
 @dataclass(frozen=True, slots=True)
 class TelegramConfig:
     enabled: bool = False
@@ -59,29 +64,29 @@ class BotSettings:
 
     @classmethod
     def from_environment(cls) -> BotSettings:
-        telegram_enabled = _bool(os.getenv("FORAKILO_TELEGRAM_ENABLED"))
-        discord_enabled = _bool(os.getenv("FORAKILO_DISCORD_ENABLED"))
+        telegram_enabled = _bool(_setting("TELEGRAM_ENABLED"))
+        discord_enabled = _bool(_setting("DISCORD_ENABLED"))
         telegram = TelegramConfig(
             enabled=telegram_enabled,
-            token=(os.getenv("FORAKILO_TELEGRAM_BOT_TOKEN") if telegram_enabled else None),
-            allowed_chat_ids=_ids(os.getenv("FORAKILO_TELEGRAM_ALLOWED_CHAT_IDS")),
-            signal_chat_id=os.getenv("FORAKILO_TELEGRAM_SIGNAL_CHAT_ID"),
-            risk_chat_id=os.getenv("FORAKILO_TELEGRAM_RISK_CHAT_ID"),
-            system_chat_id=os.getenv("FORAKILO_TELEGRAM_SYSTEM_CHAT_ID"),
+            token=_setting("TELEGRAM_BOT_TOKEN") if telegram_enabled else None,
+            allowed_chat_ids=_ids(_setting("TELEGRAM_ALLOWED_CHAT_IDS")),
+            signal_chat_id=_setting("TELEGRAM_SIGNAL_CHAT_ID"),
+            risk_chat_id=_setting("TELEGRAM_RISK_CHAT_ID"),
+            system_chat_id=_setting("TELEGRAM_SYSTEM_CHAT_ID"),
         )
         discord = DiscordConfig(
             enabled=discord_enabled,
-            token=os.getenv("FORAKILO_DISCORD_BOT_TOKEN") if discord_enabled else None,
-            application_id=os.getenv("FORAKILO_DISCORD_APPLICATION_ID"),
-            allowed_guild_ids=_ids(os.getenv("FORAKILO_DISCORD_ALLOWED_GUILD_IDS")),
-            allowed_channel_ids=_ids(os.getenv("FORAKILO_DISCORD_ALLOWED_CHANNEL_IDS")),
-            signal_channel_id=os.getenv("FORAKILO_DISCORD_SIGNAL_CHANNEL_ID"),
-            risk_channel_id=os.getenv("FORAKILO_DISCORD_RISK_CHANNEL_ID"),
-            system_channel_id=os.getenv("FORAKILO_DISCORD_SYSTEM_CHANNEL_ID"),
+            token=_setting("DISCORD_BOT_TOKEN") if discord_enabled else None,
+            application_id=_setting("DISCORD_APPLICATION_ID"),
+            allowed_guild_ids=_ids(_setting("DISCORD_ALLOWED_GUILD_IDS")),
+            allowed_channel_ids=_ids(_setting("DISCORD_ALLOWED_CHANNEL_IDS")),
+            signal_channel_id=_setting("DISCORD_SIGNAL_CHANNEL_ID"),
+            risk_channel_id=_setting("DISCORD_RISK_CHANNEL_ID"),
+            system_channel_id=_setting("DISCORD_SYSTEM_CHANNEL_ID"),
         )
         telegram.validate()
         discord.validate()
-        return cls(os.getenv("FORAKILO_INSTALLATION_ID", "local"), telegram, discord)
+        return cls(_setting("INSTALLATION_ID", "local") or "local", telegram, discord)
 
 
 def redact(value: str, secrets: tuple[str | None, ...]) -> str:
