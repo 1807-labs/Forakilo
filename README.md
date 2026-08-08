@@ -1,99 +1,76 @@
 # For8killo
 
-## For8killo MVP
+For8killo is a self-hosted, evidence-led market-intelligence and paper-practice platform.
+Foreight is its conversational research agent. The legacy `forakilo` Python namespace remains as
+a compatibility layer; new integrations should use the `foreightkillo` namespace and `for8killo`
+command.
 
-For8killo is the self-hosted product and Foreight is its evidence-led financial
-intelligence. The current MVP provides:
+## Working MVP
+
+The current MVP includes:
 
 - deterministic market-structure, liquidity-sweep, imbalance, volatility, and regime analysis;
-- cost-, freshness-, exposure-, regime-, and uncertainty-aware opportunity ranking;
-- synthetic local forex, commodity, and crypto data for development only;
-- fail-closed risk controls and idempotent paper execution;
-- a FastAPI interface plus provider-neutral Telegram and Discord notifications;
-- executable behavior specifications in `features/`.
+- cost-, freshness-, exposure-, regime-, and uncertainty-aware signal ranking;
+- synthetic local FX, commodity, and crypto data for deterministic development;
+- point-in-time backtesting with next-bar fills, explicit friction, sizing, and drawdown metrics;
+- fail-closed risk gates, idempotent paper orders, and authorized practice-account routing;
+- portfolio accounting, realized/unrealized performance, and broker reconciliation;
+- governed model-version registration, validation evidence, manual promotion, and audit history;
+- persistent conversation memory, approved-source research ingestion, and grounded explanations;
+- scoped API-key authentication, signed webhooks, persistent kill switch, and operational audit;
+- an authenticated browser console plus read-only Telegram and Discord integration foundations;
+- executable behavior specifications under [`features/`](features/).
 
-No profitability is guaranteed. Live-money execution and messaging-based trade mutation are
-intentionally unavailable.
+Live-money execution does not exist in this release. Messaging cannot mutate trading state. No
+profitability, accuracy, or return is promised.
 
-### Run locally
+## Run locally
+
+Python 3.11 or 3.12 and [uv](https://docs.astral.sh/uv/) are required.
 
 ```powershell
 uv sync --all-groups
-set FOR8KILLO_API_KEY=local.replace-with-at-least-24-random-characters
+$env:FOR8KILLO_API_KEY="local.replace-with-at-least-24-random-characters"
 uv run for8killo
 ```
 
-Open `http://127.0.0.1:8000/` for the operator landing page and `/docs` for the API. Protected
-requests use `Authorization: Bearer <key-id.secret>`. Request an analysis from
-`/api/v1/analysis/EUR_USD`. The bundled provider is deterministic synthetic data and is clearly
-identified as such; replace it with an approved licensed provider before making real decisions.
+Open `http://127.0.0.1:8000/`. Enter the same `key-id.secret` value in the operator console. The
+OpenAPI interface is available at `/docs`; the unauthenticated liveness endpoint is `/health`.
+Runtime state defaults to `.state/`, which is excluded from Git. See [`.env.example`](.env.example)
+for optional integration settings.
 
-Validate with `uv run pytest`, `uv run behave`, `uv run ruff check .`, and `uv run pyright`.
+## Run in Docker
 
-Forakilo is a pre-development repository for an authenticated AI-assisted quantitative market-analysis and paper-trading platform for cryptocurrency and foreign-exchange markets.
+```powershell
+docker build -t for8killo:local .
+docker run --rm -p 8000:8000 -e FOR8KILLO_API_KEY="local.replace-with-at-least-24-random-characters" for8killo:local
+```
 
-The project is currently a documentation and planning baseline. No production application code, dashboard, trading engine, market-data connector, model pipeline, broker/exchange integration, CI workflow, tests, or deployed service is implemented in this repository yet.
+The image runs as a non-root user and stores SQLite operational state under `/app/.state`. Mount
+that directory as a volume when persistence across containers is required.
 
-## Purpose
+## Validate
 
-Forakilo is intended to help users research market data, validate strategies, monitor model behavior, and operate paper trading before any controlled live execution is considered.
+```powershell
+uv run ruff format --check .
+uv run ruff check .
+uv run pytest -q
+uv run behave
+uv run pyright
+uv run pip-audit --progress-spinner off
+```
 
-The product direction emphasizes:
-
-- Capital preservation before return optimization.
-- Paper trading before live trading.
-- Deterministic risk controls before any order.
-- Complete auditability of significant user, data, model, risk, and execution events.
-- Point-in-time data correctness.
-- Truthful reporting of implementation status and performance limits.
-
-## Safety Position
-
-Forakilo must not promise returns, trade quality, prediction accuracy, or elimination of financial risk. Historical or simulated performance must not be presented as proof of future results.
-
-Live trading is disabled until explicit legal, security, data, model, risk, operations, provider, and human approval gates are satisfied. Automated retraining may create candidate models, but MVP and initial live releases must not silently promote a candidate model into live capital execution.
-
-## Current Repository State
-
-Verified on 2026-07-04:
-
-- Present: documentation baseline, normalized planning backlog, GPL-3.0 license.
-- Missing: application source, tests, dependency manifests, workflows, Docker files, infrastructure, secrets, model artifacts, provider accounts, and deployments.
-
-See [Repository Evidence Inventory](docs/research/REPOSITORY_EVIDENCE_INVENTORY.md).
-
-## Architecture Direction
-
-The selected initial architecture is a modular monolith with explicit internal planes:
-
-- Control Plane
-- Data Plane
-- Intelligence Plane
-- Trading Plane
-- Governance and Operations Plane
-
-See [System Architecture](docs/architecture/SYSTEM_ARCHITECTURE.md) and [ADR Index](docs/architecture/decisions/ADR-INDEX.md).
+The bundled provider is synthetic and identifies itself as such. Install an approved, licensed
+market-data provider before using the system for real decisions. Practice-broker execution still
+requires a matching unexpired proposal, approving deterministic risk decision, and one-time human
+authorization.
 
 ## Documentation
 
-Start with [DOCUMENTATION_INDEX.md](DOCUMENTATION_INDEX.md). Key documents:
-
-- [Product Vision](docs/product/PRODUCT_VISION.md)
-- [Product Requirements Document](docs/product/PRODUCT_REQUIREMENTS_DOCUMENT.md)
-- [Delivery Roadmap](docs/roadmap/DELIVERY_ROADMAP.md)
-- [MVP Scope and Exit Criteria](docs/roadmap/MVP_SCOPE_AND_EXIT_CRITERIA.md)
-- [Paper to Live Trading Gate](docs/trading/PAPER_TO_LIVE_TRADING_GATE.md)
-- [Security Policy](SECURITY.md)
-- [Contributing](CONTRIBUTING.md)
-
-## Development Status
-
-There is no verified functional setup yet because no application code or dependency manifest exists. Setup instructions will be added only after a working local development path is implemented and tested.
-
-## Risk and Non-Advisory Notice
-
-Forakilo documentation is not financial, investment, legal, tax, or trading advice. Cryptocurrency, FX, CFDs, derivatives, and margin products can involve substantial loss. Users remain responsible for provider terms, market risk, tax obligations, and their own decisions.
+Start with the [documentation index](DOCUMENTATION_INDEX.md), [system architecture](docs/architecture/SYSTEM_ARCHITECTURE.md),
+[risk policy](docs/trading/RISK_MANAGEMENT_POLICY.md), [MVP exit criteria](docs/roadmap/MVP_SCOPE_AND_EXIT_CRITERIA.md),
+and [security policy](SECURITY.md).
 
 ## License
 
-This repository contains a GPL-3.0 license in [LICENSE](LICENSE).
+For8killo is distributed under [GPL-3.0](LICENSE).
