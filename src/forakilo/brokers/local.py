@@ -63,7 +63,7 @@ class LocalBroker(Broker):
         stop_price: Decimal | None,
         mode: str,
     ) -> BrokerOrder:
-        if mode != "paper":
+        if mode not in {"paper", "sandbox-manual"}:
             raise PermissionError("live orders not permitted")
         order_id = str(uuid4())
         self._orders[order_id] = BrokerOrder(
