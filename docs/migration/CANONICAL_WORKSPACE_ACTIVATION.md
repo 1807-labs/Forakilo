@@ -3,16 +3,16 @@
 Date: 2026-07-29  
 Status: **ACTIVE**
 
-The canonical development checkout at `<FORAKILO_WORKTREE>` was created by a
-fresh clone of `https://github.com/1807-labs/Forakilo.git`. It was not copied
+The canonical development checkout at `<FOREIGHTKILLO_WORKTREE>` was created by a
+fresh clone of `https://github.com/1807-labs/Foreightkillo.git`. It was not copied
 from a legacy or cloud-synced workspace.
 
 ## Repository verification
 
 | Check | Result |
 |---|---|
-| Root | `<FORAKILO_WORKTREE>` |
-| Origin | canonical public Forakilo repository |
+| Root | `<FOREIGHTKILLO_WORKTREE>` |
+| Origin | canonical public Foreightkillo repository |
 | Branch/upstream | `main` / `origin/main` |
 | HEAD and remote main | `2697a22e09a34070e1382ef8f5fd0a14ce404bb1` |
 | Worktree | clean |
@@ -23,7 +23,7 @@ from a legacy or cloud-synced workspace.
 
 ## Reproduction commands
 
-The following commands were run from `<FORAKILO_WORKTREE>`:
+The following commands were run from `<FOREIGHTKILLO_WORKTREE>`:
 
 ```text
 uv sync --all-groups

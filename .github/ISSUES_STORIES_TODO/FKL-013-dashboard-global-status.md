@@ -8,7 +8,7 @@ Estimate: 13
 
 ## User Story
 
-As a user, I want a dashboard that shows market, account, strategy, model, risk, execution, and system health so that I can understand Forakilo's current state.
+As a user, I want a dashboard that shows market, account, strategy, model, risk, execution, and system health so that I can understand Foreightkillo's current state.
 
 ## Business Value
 

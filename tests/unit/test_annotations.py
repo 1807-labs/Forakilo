@@ -3,8 +3,8 @@ from decimal import Decimal
 
 import pytest
 
-from forakilo.domain import EventIdentity
-from forakilo.intelligence.annotation import (
+from foreightkillo.domain import EventIdentity
+from foreightkillo.intelligence.annotation import (
     AnnotationProposal,
     AnnotationSource,
     AnnotationStore,

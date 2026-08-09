@@ -1,15 +1,15 @@
 # Support
 
-Purpose: explain support expectations for Forakilo.
+Purpose: explain support expectations for Foreightkillo.
 Scope: repository support, security issues, and current project status.
 Audience: users, contributors, and maintainers.
-Assumptions: Forakilo has no production service and no released software.
+Assumptions: Foreightkillo has no production service and no released software.
 Dependencies: [Security Policy](SECURITY.md), [Documentation Index](DOCUMENTATION_INDEX.md).
 Unresolved decisions: public support channels and response targets.
 
 ## Current Support Status
 
-Forakilo is pre-development. There is no deployed service, no live trading support, and no user account support channel.
+Foreightkillo is pre-development. There is no deployed service, no live trading support, and no user account support channel.
 
 ## Documentation and Planning Questions
 

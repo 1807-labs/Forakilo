@@ -1,21 +1,21 @@
 # Product Vision
 
-Purpose: define what Forakilo is intended to become.
+Purpose: define what Foreightkillo is intended to become.
 Scope: product intent, safety posture, and success boundaries before implementation.
 Audience: product owners, engineers, reviewers, risk approvers, and legal counsel.
-Assumptions: Forakilo starts as a Canada-first, pre-development platform with no implemented trading capability.
+Assumptions: Foreightkillo starts as a Canada-first, pre-development platform with no implemented trading capability.
 Dependencies: [Scope and Non-Goals](SCOPE_AND_NON_GOALS.md), [Delivery Roadmap](../roadmap/DELIVERY_ROADMAP.md).
 Unresolved decisions: operating model, approved providers, and live trading eligibility require legal and product approval.
 
 ## Vision
 
-Forakilo is intended to become an authenticated AI-assisted quantitative market-analysis and trading-risk platform for cryptocurrency and foreign-exchange markets. It should help a user research market data, evaluate strategies, monitor model behavior, and operate paper trading before any controlled live execution is considered.
+Foreightkillo is intended to become an authenticated AI-assisted quantitative market-analysis and trading-risk platform for cryptocurrency and foreign-exchange markets. It should help a user research market data, evaluate strategies, monitor model behavior, and operate paper trading before any controlled live execution is considered.
 
 ## Product Promise
 
-Forakilo MUST prioritize capital preservation, operational correctness, traceability, controlled risk, privacy, and truthful performance reporting.
+Foreightkillo MUST prioritize capital preservation, operational correctness, traceability, controlled risk, privacy, and truthful performance reporting.
 
-Forakilo MUST NOT promise returns, eliminate financial risk, or describe research results as proof of future performance.
+Foreightkillo MUST NOT promise returns, eliminate financial risk, or describe research results as proof of future performance.
 
 ## Governing Principles
 

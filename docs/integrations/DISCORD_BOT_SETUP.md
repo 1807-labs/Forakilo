@@ -21,7 +21,7 @@ them with installation metadata.
 
 Keep Telegram disabled, verify `/users/@me`, send a paper-only health notification to the
 allowlisted channel, and confirm a second channel is denied. Set
-`FORAKILO_DISCORD_ENABLED=false` and restart to disable the integration.
+`FOREIGHTKILLO_DISCORD_ENABLED=false` and restart to disable the integration.
 
 For failures, inspect redacted provider health, channel membership, overwrite permissions, the
 guild/channel allowlists, and retry-after status. Rotate the token in the developer portal,

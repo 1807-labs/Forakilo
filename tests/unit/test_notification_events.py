@@ -2,7 +2,7 @@ from datetime import UTC, datetime, timedelta
 
 import pytest
 
-from forakilo.notifications.events import (
+from foreightkillo.notifications.events import (
     EventEnvelope,
     EventSeverity,
     EventType,
@@ -11,7 +11,7 @@ from forakilo.notifications.events import (
     SignalEventPayload,
     Visibility,
 )
-from forakilo.notifications.projections import NotificationProjector
+from foreightkillo.notifications.projections import NotificationProjector
 
 NOW = datetime(2026, 7, 29, tzinfo=UTC)
 

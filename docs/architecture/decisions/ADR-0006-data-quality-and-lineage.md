@@ -12,11 +12,11 @@ Unresolved decisions: exact data-contract format and quality tooling configurati
 
 ## Decision
 
-Forakilo will use explicit data zones, schema versions, quality thresholds, lineage metadata, content fingerprints, and time semantics for every market, macro, feature, dataset, model, signal, and execution record.
+Foreightkillo will use explicit data zones, schema versions, quality thresholds, lineage metadata, content fingerprints, and time semantics for every market, macro, feature, dataset, model, signal, and execution record.
 
 ## Rationale
 
-Trading and model validation require reproducible point-in-time datasets. Forakilo must prevent leakage, training-serving skew, stale quotes, revised macro data misuse, and cross-tenant data exposure.
+Trading and model validation require reproducible point-in-time datasets. Foreightkillo must prevent leakage, training-serving skew, stale quotes, revised macro data misuse, and cross-tenant data exposure.
 
 ## Consequences
 

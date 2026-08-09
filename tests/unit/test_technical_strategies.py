@@ -1,5 +1,5 @@
-from forakilo.intelligence.strategies import TechnicalStrategyEngine
-from forakilo.marketdata.local import LocalMarketDataProvider
+from foreightkillo.intelligence.strategies import TechnicalStrategyEngine
+from foreightkillo.marketdata.local import LocalMarketDataProvider
 
 
 def test_strategy_suite_is_explainable_and_covers_brief_strategies() -> None:

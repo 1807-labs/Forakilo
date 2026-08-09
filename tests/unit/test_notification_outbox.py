@@ -4,9 +4,9 @@ from pathlib import Path
 
 import pytest
 
-from forakilo.notifications.events import Visibility
-from forakilo.notifications.outbox import FailureClass, OutboxState, SQLiteOutbox
-from forakilo.notifications.projections import Notification, NotificationPriority
+from foreightkillo.notifications.events import Visibility
+from foreightkillo.notifications.outbox import FailureClass, OutboxState, SQLiteOutbox
+from foreightkillo.notifications.projections import Notification, NotificationPriority
 
 
 @dataclass

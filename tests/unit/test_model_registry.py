@@ -3,7 +3,7 @@ from pathlib import Path
 
 import pytest
 
-from forakilo.models import ModelRegistry, ValidationEvidence
+from foreightkillo.models import ModelRegistry, ValidationEvidence
 
 
 def _evidence(approved: bool = True) -> ValidationEvidence:

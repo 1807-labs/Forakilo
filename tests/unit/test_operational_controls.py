@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from forakilo.operations import OperationalControls
+from foreightkillo.operations import OperationalControls
 
 
 def test_controls_start_fail_closed_and_persist_audited_changes(tmp_path: Path) -> None:

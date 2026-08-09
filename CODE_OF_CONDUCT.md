@@ -1,6 +1,6 @@
 # Code of Conduct
 
-Purpose: define conduct expectations for Forakilo contributors.
+Purpose: define conduct expectations for Foreightkillo contributors.
 Scope: repository discussions, issues, reviews, and project communication.
 Audience: contributors, maintainers, and users.
 Assumptions: project collaboration should be respectful and evidence-driven.

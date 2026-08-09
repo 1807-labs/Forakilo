@@ -1,6 +1,6 @@
 # Personas and User Journeys
 
-Purpose: define the users and journeys Forakilo must support.
+Purpose: define the users and journeys Foreightkillo must support.
 Scope: MVP and controlled-beta personas.
 Audience: product, design, engineering, testing, and risk reviewers.
 Assumptions: initial users are technically capable and willing to review risk disclosures; consumer suitability still requires legal review.
@@ -22,7 +22,7 @@ Unresolved decisions: exact target customer eligibility and onboarding checks.
 
 1. User registers, verifies email, enables MFA or passkey, and accepts risk disclosures.
 2. User connects approved sandbox or demo credentials with no withdrawal permission.
-3. Forakilo validates provider connectivity and account state.
+3. Foreightkillo validates provider connectivity and account state.
 4. User selects an approved instrument and paper strategy.
 5. Market data is ingested, validated, and shown on the dashboard.
 6. Strategy/model produces a signal with confidence, expiry, and model/data versions.

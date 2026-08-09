@@ -1,6 +1,6 @@
 ---
 name: User story
-about: Create or refine a normalized Forakilo user story
+about: Create or refine a normalized Foreightkillo user story
 title: "[STORY] "
 labels: user story
 assignees: ""

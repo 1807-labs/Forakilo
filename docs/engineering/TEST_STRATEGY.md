@@ -1,6 +1,6 @@
 # Test Strategy
 
-Purpose: define risk-based testing for Forakilo.
+Purpose: define risk-based testing for Foreightkillo.
 Scope: documentation, backend, dashboard, data, ML, trading, security, operations, and releases.
 Audience: engineers, QA, security reviewers, risk reviewers, and release owners.
 Assumptions: no tests exist yet.

@@ -34,4 +34,4 @@ Unresolved decisions: provider-specific edge cases after adapter spikes.
 
 ## Edge-Case Policy
 
-If Forakilo cannot determine whether state is safe, it MUST fail closed for new execution and surface an operator alert.
+If Foreightkillo cannot determine whether state is safe, it MUST fail closed for new execution and surface an operator alert.

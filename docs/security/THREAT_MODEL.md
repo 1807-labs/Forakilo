@@ -1,6 +1,6 @@
 # Threat Model
 
-Purpose: identify Forakilo-specific threats and required controls.
+Purpose: identify Foreightkillo-specific threats and required controls.
 Scope: account, API, credential, data, model, trading, dashboard, CI/CD, dependency, and operations threats.
 Audience: security reviewers, engineers, risk reviewers, and operators.
 Assumptions: STRIDE plus misuse-case analysis is used; no implementation controls exist yet.
@@ -9,7 +9,7 @@ Unresolved decisions: owner assignments and residual-risk acceptance process.
 
 ## Method
 
-Forakilo uses STRIDE for spoofing, tampering, repudiation, information disclosure, denial of service, and elevation of privilege, supplemented by financial misuse cases.
+Foreightkillo uses STRIDE for spoofing, tampering, repudiation, information disclosure, denial of service, and elevation of privilege, supplemented by financial misuse cases.
 
 ## Threat Register
 

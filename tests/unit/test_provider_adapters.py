@@ -4,13 +4,13 @@ from typing import Any
 
 import pytest
 
-from forakilo.bot.adapters.discord import DiscordAdapter
-from forakilo.bot.adapters.http import HttpResponse
-from forakilo.bot.adapters.telegram import TelegramAdapter
-from forakilo.bot.config import BotSettings, DiscordConfig, TelegramConfig, redact
-from forakilo.bot.contracts import BotDestination, BotProvider, DeliveryRequest
-from forakilo.notifications.events import Visibility
-from forakilo.notifications.projections import Notification, NotificationPriority
+from foreightkillo.bot.adapters.discord import DiscordAdapter
+from foreightkillo.bot.adapters.http import HttpResponse
+from foreightkillo.bot.adapters.telegram import TelegramAdapter
+from foreightkillo.bot.config import BotSettings, DiscordConfig, TelegramConfig, redact
+from foreightkillo.bot.contracts import BotDestination, BotProvider, DeliveryRequest
+from foreightkillo.notifications.events import Visibility
+from foreightkillo.notifications.projections import Notification, NotificationPriority
 
 
 @dataclass
@@ -104,10 +104,10 @@ def test_tokens_are_redacted_and_repr_hidden() -> None:
 def test_disabled_providers_do_not_require_or_read_tokens(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
-    monkeypatch.setenv("FORAKILO_TELEGRAM_ENABLED", "false")
-    monkeypatch.setenv("FORAKILO_DISCORD_ENABLED", "false")
-    monkeypatch.setenv("FORAKILO_TELEGRAM_BOT_TOKEN", "must-not-be-read")
-    monkeypatch.setenv("FORAKILO_DISCORD_BOT_TOKEN", "must-not-be-read")
+    monkeypatch.setenv("FOREIGHTKILLO_TELEGRAM_ENABLED", "false")
+    monkeypatch.setenv("FOREIGHTKILLO_DISCORD_ENABLED", "false")
+    monkeypatch.setenv("FOREIGHTKILLO_TELEGRAM_BOT_TOKEN", "must-not-be-read")
+    monkeypatch.setenv("FOREIGHTKILLO_DISCORD_BOT_TOKEN", "must-not-be-read")
     settings = BotSettings.from_environment()
     assert settings.telegram.token is None
     assert settings.discord.token is None
@@ -119,7 +119,7 @@ def test_for8killo_environment_names_take_precedence(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     monkeypatch.setenv("FOR8KILLO_INSTALLATION_ID", "new-name")
-    monkeypatch.setenv("FORAKILO_INSTALLATION_ID", "legacy-name")
+    monkeypatch.setenv("FOREIGHTKILLO_INSTALLATION_ID", "legacy-name")
     monkeypatch.setenv("FOR8KILLO_TELEGRAM_ENABLED", "false")
     monkeypatch.setenv("FOR8KILLO_DISCORD_ENABLED", "false")
     assert BotSettings.from_environment().installation_id == "new-name"

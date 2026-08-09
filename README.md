@@ -1,9 +1,8 @@
 # For8killo
 
 For8killo is a self-hosted, evidence-led market-intelligence and paper-practice platform.
-Foreight is its conversational research agent. The legacy `forakilo` Python namespace remains as
-a compatibility layer; new integrations should use the `foreightkillo` namespace and `for8killo`
-command.
+Foreight is its conversational research agent. The canonical Python namespace is
+`foreightkillo`, and the command-line entry point is `for8killo`.
 
 ## Working MVP
 

@@ -4,10 +4,10 @@ from decimal import Decimal
 
 import pytest
 
-from forakilo.brokers.local import LocalBroker
-from forakilo.domain import EventIdentity, InstrumentId, OrderProposal, Side
-from forakilo.execution import Authorization, PracticeExecutionService
-from forakilo.risk import RiskDecision, RiskOutcome
+from foreightkillo.brokers.local import LocalBroker
+from foreightkillo.domain import EventIdentity, InstrumentId, OrderProposal, Side
+from foreightkillo.execution import Authorization, PracticeExecutionService
+from foreightkillo.risk import RiskDecision, RiskOutcome
 
 NOW = datetime(2026, 8, 8, tzinfo=UTC)
 

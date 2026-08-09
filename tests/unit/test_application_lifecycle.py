@@ -1,7 +1,7 @@
 from decimal import Decimal
 
-from forakilo.application import ForeightService
-from forakilo.marketdata.local import LocalMarketDataProvider
+from foreightkillo.application import ForeightService
+from foreightkillo.marketdata.local import LocalMarketDataProvider
 
 
 def test_application_generates_and_ranks_complete_signals() -> None:

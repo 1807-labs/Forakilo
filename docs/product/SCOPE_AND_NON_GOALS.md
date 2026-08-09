@@ -1,11 +1,11 @@
 # Scope and Non-Goals
 
-Purpose: define what Forakilo will and will not do in early releases.
+Purpose: define what Foreightkillo will and will not do in early releases.
 Scope: foundation, MVP, controlled beta, and post-MVP boundaries.
 Audience: product owners, engineers, legal counsel, and reviewers.
 Assumptions: reducing custody, advice, leverage, and automation risk is necessary for a safe first product.
 Dependencies: [Product Vision](PRODUCT_VISION.md), [Product Classification](../legal/PRODUCT_CLASSIFICATION_AND_REGULATORY_ASSUMPTIONS.md).
-Unresolved decisions: whether Forakilo ever expands beyond user-authorized third-party execution.
+Unresolved decisions: whether Foreightkillo ever expands beyond user-authorized third-party execution.
 
 ## In Scope for Foundation
 

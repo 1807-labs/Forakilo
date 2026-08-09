@@ -1,15 +1,15 @@
 # Security Policy
 
-Purpose: explain how to report security issues for Forakilo.
+Purpose: explain how to report security issues for Foreightkillo.
 Scope: vulnerability reporting, sensitive disclosures, and current security status.
 Audience: users, researchers, maintainers, and security reviewers.
-Assumptions: Forakilo is pre-development and has no production service.
+Assumptions: Foreightkillo is pre-development and has no production service.
 Dependencies: [Threat Model](docs/security/THREAT_MODEL.md), [Secure SDLC](docs/security/SECURE_SDLC.md).
 Unresolved decisions: private security advisory process and contact address must be configured by the repository owner.
 
 ## Current Status
 
-Forakilo is pre-development. No production application, live trading integration, or hosted service is verified in this repository.
+Foreightkillo is pre-development. No production application, live trading integration, or hosted service is verified in this repository.
 
 ## Reporting
 
@@ -23,4 +23,4 @@ No released versions are currently supported.
 
 ## Security Expectations
 
-Forakilo will require authentication, least privilege, encrypted provider credentials, no withdrawal permissions, deterministic risk controls, audit trails, dependency scanning, secret scanning, SBOMs, and controlled release gates before any live trading capability is considered.
+Foreightkillo will require authentication, least privilege, encrypted provider credentials, no withdrawal permissions, deterministic risk controls, audit trails, dependency scanning, secret scanning, SBOMs, and controlled release gates before any live trading capability is considered.

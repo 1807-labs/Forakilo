@@ -1,15 +1,15 @@
 from datetime import UTC, datetime
 from pathlib import Path
 
-from forakilo.intelligence import (
+from foreightkillo.intelligence import (
     ForeightConversation,
     ResearchDocument,
     ResearchRepository,
     SQLiteConversationMemory,
 )
-from forakilo.portfolio import PortfolioLedger
-from forakilo.queries import ApplicationQueryBackend, QueryService
-from forakilo.signals import SignalStore
+from foreightkillo.portfolio import PortfolioLedger
+from foreightkillo.queries import ApplicationQueryBackend, QueryService
+from foreightkillo.signals import SignalStore
 
 
 def _conversation(tmp_path: Path) -> ForeightConversation:

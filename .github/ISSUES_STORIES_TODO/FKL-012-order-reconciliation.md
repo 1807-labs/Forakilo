@@ -8,7 +8,7 @@ Estimate: 13
 
 ## User Story
 
-As an operator, I want reconciliation of orders, fills, balances, and positions so that Forakilo can detect unknown or unsafe account state.
+As an operator, I want reconciliation of orders, fills, balances, and positions so that Foreightkillo can detect unknown or unsafe account state.
 
 ## Business Value
 

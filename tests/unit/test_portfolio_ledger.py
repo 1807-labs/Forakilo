@@ -1,10 +1,10 @@
 from datetime import UTC, datetime, timedelta
 from decimal import Decimal
 
-from forakilo.brokers.interface import BrokerPosition
-from forakilo.domain import InstrumentId, Side
-from forakilo.execution import PaperOrder
-from forakilo.portfolio import PortfolioLedger
+from foreightkillo.brokers.interface import BrokerPosition
+from foreightkillo.domain import InstrumentId, Side
+from foreightkillo.execution import PaperOrder
+from foreightkillo.portfolio import PortfolioLedger
 
 NOW = datetime(2026, 8, 8, 12, tzinfo=UTC)
 

@@ -2,11 +2,11 @@
 
 The source identified publicly as
 `<PRIVATE_ANNOTATION_SOURCE_REPOSITORY>` is intentionally excluded from public
-Forakilo history, archive refs, and tags.
+Foreightkillo history, archive refs, and tags.
 
 Its complete history is retained in a verified private all-ref bundle. Exact
 repository identity, clone URL, source path, bundle path, and local mapping
-remain only in private evidence outside Forakilo. Public records may contain
+remain only in private evidence outside Foreightkillo. Public records may contain
 the approved source commit fingerprint, bundle checksum, classifications,
 verification outcome, and migrated behavior.
 
@@ -28,5 +28,5 @@ verification outcome, and migrated behavior.
   the current provider-neutral contracts remain implementation gaps.
 
 No private source branch, tag, bundle, commit tree, remote name, or backup ref
-may be pushed to the public Forakilo repository.
+may be pushed to the public Foreightkillo repository.
 

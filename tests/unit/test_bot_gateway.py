@@ -2,8 +2,8 @@ from datetime import UTC, datetime
 
 import pytest
 
-from forakilo.bot.adapters.local import LocalBotAdapter
-from forakilo.bot.contracts import (
+from foreightkillo.bot.adapters.local import LocalBotAdapter
+from foreightkillo.bot.contracts import (
     BotCommand,
     BotCommandContext,
     BotDestination,
@@ -12,11 +12,11 @@ from forakilo.bot.contracts import (
     BotRole,
     DeliveryRequest,
 )
-from forakilo.bot.gateway import BotGateway
-from forakilo.bot.permissions import AllowlistPermissionPolicy
-from forakilo.notifications.events import Visibility
-from forakilo.notifications.projections import Notification, NotificationPriority
-from forakilo.queries.services import QueryService
+from foreightkillo.bot.gateway import BotGateway
+from foreightkillo.bot.permissions import AllowlistPermissionPolicy
+from foreightkillo.notifications.events import Visibility
+from foreightkillo.notifications.projections import Notification, NotificationPriority
+from foreightkillo.queries.services import QueryService
 
 NOW = datetime(2026, 7, 29, tzinfo=UTC)
 

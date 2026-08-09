@@ -1,6 +1,6 @@
 # Secrets and Key Management
 
-Purpose: define how Forakilo stores and uses secrets.
+Purpose: define how Foreightkillo stores and uses secrets.
 Scope: application secrets, provider credentials, API tokens, signing keys, encryption keys, and CI secrets.
 Audience: engineers, security reviewers, operators, and release owners.
 Assumptions: no secrets should exist in the repository.

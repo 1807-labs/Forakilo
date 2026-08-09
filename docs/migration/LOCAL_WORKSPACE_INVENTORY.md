@@ -2,7 +2,7 @@
 
 | Path | Kind | Observed state | Disposition |
 |---|---|---|---|
-| `<FORAKILO_WORKTREE>` | canonical candidate | clean at preflight; canonical public remote | active implementation |
+| `<FOREIGHTKILLO_WORKTREE>` | canonical candidate | clean at preflight; canonical public remote | active implementation |
 | `<LOCAL_SOURCE_PATH>` | duplicate checkout | requires commit and dirty-state comparison | preserve |
 | `<LEGACY_WORKSPACE>` | uncommitted wrapper repo | no commits; three untracked trees | preserve; deletion blocked |
 | `<EXTERNAL_LEAN_CHECKOUT>` | nested LEAN repo | `master` at `cd52034ddf55c0c9aa57264d2a148e563924100f`; status scan stalls on cloud-synced storage | pinned external runtime; cleanliness unresolved; never vendor |

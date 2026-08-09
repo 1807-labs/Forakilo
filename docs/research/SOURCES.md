@@ -1,6 +1,6 @@
 # Research Sources
 
-Purpose: record current online research used for the Forakilo baseline.
+Purpose: record current online research used for the Foreightkillo baseline.
 Scope: standards, regulators, technology documentation, provider documentation, and credible supporting sources accessed on 2026-07-04.
 Audience: maintainers, reviewers, legal counsel, security reviewers, and product owners.
 Assumptions: source pages may change after access; provider availability and terms require re-check before implementation.
@@ -9,7 +9,7 @@ Unresolved decisions: final provider contracts, account eligibility, and legal i
 
 ## Source Ledger
 
-| Source | Organization | Type | URL | Date or version | Forakilo decision | Limitations |
+| Source | Organization | Type | URL | Date or version | Foreightkillo decision | Limitations |
 | --- | --- | --- | --- | --- | --- | --- |
 | AI Risk Management Framework | NIST | Official framework | https://www.nist.gov/itl/ai-risk-management-framework | AI RMF 1.0, Jan 2023 | Use Govern, Map, Measure, Manage for AI risk controls and model governance. | Voluntary framework; not trading-specific. |
 | SP 800-218 Secure Software Development Framework | NIST CSRC | Official standard | https://csrc.nist.gov/pubs/sp/800/218/final | v1.1, Feb 2022 | Use SSDF practices for secure SDLC, CI gates, vulnerability handling, and release evidence. | Revision 1.2 was draft research as of this baseline; final v1.1 remains the normative baseline. |
@@ -24,9 +24,9 @@ Unresolved decisions: final provider contracts, account eligibility, and legal i
 | PIPEDA statute | Justice Laws Canada | Statute | https://laws-lois.justice.gc.ca/eng/acts/p-8.6/ | Current consolidation page | Use accountability, consent, safeguards, access, breach, and retention obligations. | Technical draft only; legal review required. |
 | Bill C-27 LEGISinfo | Parliament of Canada | Official bill history | https://www.parl.ca/legisinfo/en/bill/44-1/c-27 | 44th Parliament, 1st session ended Jan 6, 2025 | Do not assume CPPA or AIDA are in force; monitor replacement legislation. | Official page records bill history, not all practical implications. |
 | CSA crypto platforms authorized list | Canadian Securities Administrators | Regulator list | https://www.securities-administrators.ca/crypto-platforms-regulation-and-enforcement-actions/crypto-platforms-authorized-to-do-business-with-canadians/ | Accessed 2026-07-04 | Canadian crypto venue selection MUST start from authorized platforms and current exemptions. | Provider list changes; re-check before integration. |
-| CSA Staff Notice 21-332 | OSC/CSA | Regulator guidance | https://www.osc.ca/en/securities-law/instruments-rules-policies/2/21-332/csa-staff-notice-21-332-crypto-asset-trading-platforms-pre-registration-undertakings-changes | Feb 2023 | Avoid custody, margin, leverage, and copy-trading assumptions without legal review. | Applies to CTPs; Forakilo classification depends on product model. |
+| CSA Staff Notice 21-332 | OSC/CSA | Regulator guidance | https://www.osc.ca/en/securities-law/instruments-rules-policies/2/21-332/csa-staff-notice-21-332-crypto-asset-trading-platforms-pre-registration-undertakings-changes | Feb 2023 | Avoid custody, margin, leverage, and copy-trading assumptions without legal review. | Applies to CTPs; Foreightkillo classification depends on product model. |
 | CSA Staff Notice 21-333 | OSC/CSA | Regulator guidance | https://www.osc.ca/en/securities-law/instruments-rules-policies/2/21-333/csa-staff-notice-21-333-crypto-asset-trading-platforms-terms-and-conditions-trading-value | 2023 | Treat value-referenced crypto assets as a regulated-risk area. | Stablecoin guidance evolves. |
-| NI 23-103 Electronic Trading | OSC/CSA | Regulation | https://www.osc.ca/en/securities-law/instruments-rules-policies/2/23-103/ni-23-103-electronic-trading-and-companion-policy-23-103-electronic-trading | In force | Design pre-trade risk controls, automated order controls, and supervision evidence. | Applicability to Forakilo depends on legal classification and marketplace access. |
+| NI 23-103 Electronic Trading | OSC/CSA | Regulation | https://www.osc.ca/en/securities-law/instruments-rules-policies/2/23-103/ni-23-103-electronic-trading-and-companion-policy-23-103-electronic-trading | In force | Design pre-trade risk controls, automated order controls, and supervision evidence. | Applicability to Foreightkillo depends on legal classification and marketplace access. |
 | CIRO electronic trading guidance | CIRO | Regulator guidance | https://www.ciro.ca/newsroom/publications/guidance-respecting-electronic-trading-0 | Accessed 2026-07-04 | Treat automated order systems as requiring documented controls and monitoring. | Applicability requires counsel and dealer context. |
 | OANDA v20 REST API | OANDA | Official provider docs | https://developer.oanda.com/rest-live-v20/introduction/ | Current docs | Candidate FX demo/live provider because v20 and practice environment exist. | Account eligibility, terms, and API-token scope require review. |
 | OANDA v20 development guide | OANDA | Official provider docs | https://developer.oanda.com/rest-live-v20/development-guide/ | Current docs | Separate practice and live endpoints; paper-first environment design. | Rate and account constraints must be verified during implementation. |

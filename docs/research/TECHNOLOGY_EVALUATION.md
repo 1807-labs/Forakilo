@@ -1,9 +1,9 @@
 # Technology Evaluation
 
-Purpose: select initial technologies for Forakilo before implementation.
+Purpose: select initial technologies for Foreightkillo before implementation.
 Scope: application, dashboard, storage, data engineering, ML, backtesting, infrastructure, and DevSecOps choices.
 Audience: maintainers, engineering leads, security reviewers, and product owners.
-Assumptions: Forakilo starts as a pre-development repository; local development on Windows is expected; production hosting is not selected; open-source and self-hostable options are preferred.
+Assumptions: Foreightkillo starts as a pre-development repository; local development on Windows is expected; production hosting is not selected; open-source and self-hostable options are preferred.
 Dependencies: [Sources](SOURCES.md), [ADR Index](../architecture/decisions/ADR-INDEX.md).
 Unresolved decisions: exact package versions, hosting provider, paid data vendors, and final broker/exchange integration require later spikes and approvals.
 
@@ -50,7 +50,7 @@ Unresolved decisions: exact package versions, hosting provider, paid data vendor
 ## MVP Technology Principles
 
 - The system SHOULD begin as a modular monolith with clear internal planes.
-- Trading intelligence SHOULD be implemented in Forakilo-controlled code and infrastructure where practical.
+- Trading intelligence SHOULD be implemented in Foreightkillo-controlled code and infrastructure where practical.
 - Hosted general-purpose LLM APIs MUST NOT be in the real-time market-analysis, risk-control, or order-execution path.
 - Deterministic risk controls MUST operate independently of model output.
 - Paper trading MUST be the default execution mode.

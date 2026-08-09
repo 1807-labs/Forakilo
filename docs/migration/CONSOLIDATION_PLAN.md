@@ -6,7 +6,7 @@
    separately because an empty Git repository cannot bundle uncommitted files.
 3. Push source commits as unrelated archival refs without merging them into
    `main`; record hashes and checksums.
-4. Reconcile accepted Chainna decisions under Forakilo attribution and migrate
+4. Reconcile accepted Chainna decisions under Foreightkillo attribution and migrate
    Sandy/ChainCrawlr behavior through specifications, fixtures, and clean-room
    implementation.
 5. Implement and verify the modular monolith in small work-unit commits.

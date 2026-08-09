@@ -1,6 +1,6 @@
 # Integration Architecture
 
-Purpose: define how Forakilo integrates with external systems.
+Purpose: define how Foreightkillo integrates with external systems.
 Scope: brokers, exchanges, market data, macro data, notifications, and observability.
 Audience: engineers, security reviewers, legal counsel, and operators.
 Assumptions: provider integrations are high-risk and must be verified per provider.

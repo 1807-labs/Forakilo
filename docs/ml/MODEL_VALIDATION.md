@@ -1,6 +1,6 @@
 # Model Validation
 
-Purpose: define validation standards for Forakilo models.
+Purpose: define validation standards for Foreightkillo models.
 Scope: baselines, candidates, champion comparison, leakage, calibration, robustness, and paper evaluation.
 Audience: ML engineers, quantitative researchers, risk reviewers, and QA.
 Assumptions: no model is valid merely because it performs well in sample.

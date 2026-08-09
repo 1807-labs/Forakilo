@@ -27,7 +27,7 @@ dev = [
 ]
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/forakilo", "src/foreightkillo"]
+packages = ["src/foreightkillo"]
 
 [project.scripts]
 for8killo = "foreightkillo.cli:main"

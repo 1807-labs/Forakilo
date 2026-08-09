@@ -1,6 +1,6 @@
 from datetime import UTC, datetime, timedelta
 
-from forakilo.security import ApiKeyAuthenticator, Principal, SignedWebhook
+from foreightkillo.security import ApiKeyAuthenticator, Principal, SignedWebhook
 
 
 def test_api_keys_are_scoped_and_not_stored_in_plaintext() -> None:

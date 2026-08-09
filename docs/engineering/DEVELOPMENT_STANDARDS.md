@@ -1,6 +1,6 @@
 # Development Standards
 
-Purpose: define engineering standards for future Forakilo work.
+Purpose: define engineering standards for future Foreightkillo work.
 Scope: code, docs, tests, reviews, security, data, ML, and trading changes.
 Audience: contributors, maintainers, and reviewers.
 Assumptions: standards will evolve as code is added.

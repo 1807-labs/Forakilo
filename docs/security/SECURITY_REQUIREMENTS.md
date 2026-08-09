@@ -1,6 +1,6 @@
 # Security Requirements
 
-Purpose: define Forakilo security requirements for future implementation.
+Purpose: define Foreightkillo security requirements for future implementation.
 Scope: application, API, data, model, trading, infrastructure, and operations security.
 Audience: engineers, QA, security reviewers, and release owners.
 Assumptions: OWASP ASVS Level 2 is the default target; higher controls apply to credential and trading-impact actions.

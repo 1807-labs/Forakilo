@@ -6,7 +6,7 @@ Date: 2026-07-04
 Purpose: select the backend technology baseline.
 Scope: API, validation, persistence access, migrations, and configuration.
 Audience: backend engineers and reviewers.
-Assumptions: Python ML and data tooling are central to Forakilo; exact versions will be pinned when manifests are created.
+Assumptions: Python ML and data tooling are central to Foreightkillo; exact versions will be pinned when manifests are created.
 Dependencies: [Technology Evaluation](../../research/TECHNOLOGY_EVALUATION.md), [Sources](../../research/SOURCES.md).
 Unresolved decisions: background-job library and workflow orchestrator require implementation spikes.
 

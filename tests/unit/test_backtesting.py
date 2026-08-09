@@ -2,8 +2,8 @@ from dataclasses import dataclass
 from datetime import UTC, datetime, timedelta
 from decimal import Decimal
 
-from forakilo.backtesting import BacktestConfig, BacktestEngine
-from forakilo.domain import Candle, EventIdentity, InstrumentId, MarketDataProvenance, Side
+from foreightkillo.backtesting import BacktestConfig, BacktestEngine
+from foreightkillo.domain import Candle, EventIdentity, InstrumentId, MarketDataProvenance, Side
 
 
 def _candles(count: int = 35) -> tuple[Candle, ...]:

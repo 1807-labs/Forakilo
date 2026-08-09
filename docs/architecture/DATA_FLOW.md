@@ -1,6 +1,6 @@
 # Data Flow
 
-Purpose: define how data moves through Forakilo.
+Purpose: define how data moves through Foreightkillo.
 Scope: market data, features, models, signals, risk decisions, orders, fills, and audit records.
 Audience: data engineers, ML engineers, backend engineers, and reviewers.
 Assumptions: raw provider payloads are retained subject to provider terms and retention policy.

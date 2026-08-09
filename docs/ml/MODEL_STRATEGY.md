@@ -1,6 +1,6 @@
 # Model Strategy
 
-Purpose: define Forakilo's initial model approach.
+Purpose: define Foreightkillo's initial model approach.
 Scope: prediction targets, baselines, candidates, abstention, explainability, and lifecycle.
 Audience: ML engineers, quantitative researchers, risk reviewers, and product owners.
 Assumptions: simple validated models are preferred before complex models; model output is advisory to deterministic controls.

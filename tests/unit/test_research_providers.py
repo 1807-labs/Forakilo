@@ -4,7 +4,7 @@ from typing import Any
 
 import pytest
 
-from forakilo.intelligence import (
+from foreightkillo.intelligence import (
     FeedItem,
     HttpLanguageProvider,
     ResearchIngestionPolicy,

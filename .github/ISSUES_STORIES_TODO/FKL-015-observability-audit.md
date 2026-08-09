@@ -8,7 +8,7 @@ Estimate: 8
 
 ## User Story
 
-As an operator, I want correlated logs, metrics, traces, alerts, and audit records so that significant Forakilo actions are observable and attributable.
+As an operator, I want correlated logs, metrics, traces, alerts, and audit records so that significant Foreightkillo actions are observable and attributable.
 
 ## Business Value
 

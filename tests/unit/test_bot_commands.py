@@ -1,8 +1,8 @@
-from forakilo.bot.commands import parse_command
+from foreightkillo.bot.commands import parse_command
 
 
 def test_parse_provider_qualified_command() -> None:
-    command = parse_command("/signal@forakilo_bot abc-123", "command-1")
+    command = parse_command("/signal@foreightkillo_bot abc-123", "command-1")
     assert command.name == "signal"
     assert command.arguments == ("abc-123",)
     assert command.command_id == "command-1"

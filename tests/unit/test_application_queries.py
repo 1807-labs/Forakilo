@@ -1,6 +1,6 @@
-from forakilo.portfolio import PortfolioLedger
-from forakilo.queries import ApplicationQueryBackend, Availability, QueryService
-from forakilo.signals import SignalStore
+from foreightkillo.portfolio import PortfolioLedger
+from foreightkillo.queries import ApplicationQueryBackend, Availability, QueryService
+from foreightkillo.signals import SignalStore
 
 
 def test_application_queries_report_real_empty_state() -> None:

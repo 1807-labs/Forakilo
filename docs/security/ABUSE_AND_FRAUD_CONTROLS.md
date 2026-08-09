@@ -3,7 +3,7 @@
 Purpose: define controls against account, credential, provider, and trading abuse.
 Scope: registration, login, recovery, API use, provider credentials, trading controls, and cost abuse.
 Audience: security, product, support, operations, and engineers.
-Assumptions: Forakilo may be targeted for credential abuse and automated financial misuse.
+Assumptions: Foreightkillo may be targeted for credential abuse and automated financial misuse.
 Dependencies: [Account Lifecycle](ACCOUNT_AND_SESSION_LIFECYCLE.md), [Threat Model](THREAT_MODEL.md).
 Unresolved decisions: exact fraud signals and support escalation process.
 

@@ -1,6 +1,6 @@
 # Glossary
 
-Purpose: define terms used across Forakilo documentation.
+Purpose: define terms used across Foreightkillo documentation.
 Scope: product, trading, data, ML, security, and operations terms.
 Audience: all contributors and reviewers.
 Assumptions: terms may be refined as implementation reveals better domain language.
@@ -25,7 +25,7 @@ Unresolved decisions: provider-specific terminology mappings.
 - Data drift: change in the distribution of input data.
 - Deterministic risk control: rule-based control that can reject execution without relying on model approval.
 - Event time: time at which the market or provider event occurred.
-- Ingestion time: time at which Forakilo received the event.
+- Ingestion time: time at which Foreightkillo received the event.
 - Kill switch: control that stops new execution and may trigger protective operational actions.
 - Live trading: trading against real capital through an approved provider.
 - Model promotion: change that moves a model to a higher-impact stage such as shadow, paper, or live eligibility.

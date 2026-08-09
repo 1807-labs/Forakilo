@@ -4,9 +4,9 @@ from decimal import Decimal
 
 import pytest
 
-from forakilo.intelligence.market import SmartMoneyAnalyzer
-from forakilo.marketdata.local import LocalMarketDataProvider
-from forakilo.signals import SignalPipeline
+from foreightkillo.intelligence.market import SmartMoneyAnalyzer
+from foreightkillo.marketdata.local import LocalMarketDataProvider
+from foreightkillo.signals import SignalPipeline
 
 NOW = datetime(2026, 8, 8, 12, tzinfo=UTC)
 

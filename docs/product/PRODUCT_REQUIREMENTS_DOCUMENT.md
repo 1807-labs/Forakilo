@@ -1,9 +1,9 @@
 # Product Requirements Document
 
-Purpose: define Forakilo requirements for implementation planning and acceptance.
+Purpose: define Foreightkillo requirements for implementation planning and acceptance.
 Scope: foundation, MVP, controlled beta, and post-MVP product requirements.
 Audience: product owners, engineers, testers, risk reviewers, and legal counsel.
-Assumptions: users keep accounts with approved third-party providers; Forakilo does not hold funds or provide personalized financial advice in the MVP.
+Assumptions: users keep accounts with approved third-party providers; Foreightkillo does not hold funds or provide personalized financial advice in the MVP.
 Dependencies: [Product Vision](PRODUCT_VISION.md), [Non-Functional Requirements](NON_FUNCTIONAL_REQUIREMENTS.md), [Requirements Traceability Matrix](REQUIREMENTS_TRACEABILITY_MATRIX.md).
 Unresolved decisions: final user segment, provider contracts, risk limits, and legal permissions.
 
@@ -39,4 +39,4 @@ See [Non-Functional Requirements](NON_FUNCTIONAL_REQUIREMENTS.md) for security, 
 
 ## Acceptance Boundary
 
-Forakilo is not ready for live trading until [Paper to Live Trading Gate](../trading/PAPER_TO_LIVE_TRADING_GATE.md) is satisfied.
+Foreightkillo is not ready for live trading until [Paper to Live Trading Gate](../trading/PAPER_TO_LIVE_TRADING_GATE.md) is satisfied.

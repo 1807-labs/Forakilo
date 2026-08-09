@@ -15,7 +15,7 @@ bundle.
 | `<MIGRATION_BACKUP_ROOT>/Chains-all-refs.bundle` | `6ada073d6793431c376b942ef45a73000fe781f2` | 849,915 | `89C8A190E122D9C08BB05C1609718CB8D1E7B59D4E96FF2305251F22387E93A0` | PASS |
 
 The private annotation-source bundle was created from a retained authenticated
-bare mirror. Bundle binaries are external and are not committed to Forakilo.
+bare mirror. Bundle binaries are external and are not committed to Foreightkillo.
 
 LEAN was not bundled. It remains an external fork pinned at
 `cd52034ddf55c0c9aa57264d2a148e563924100f`. Because its cloud-synced status

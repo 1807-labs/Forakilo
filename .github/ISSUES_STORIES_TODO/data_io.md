@@ -8,7 +8,7 @@ Estimate: 13
 
 ## User Story
 
-As a trader, I want Forakilo to connect to approved sandbox/demo market-data providers so that paper strategies can receive validated real-time and historical data.
+As a trader, I want Foreightkillo to connect to approved sandbox/demo market-data providers so that paper strategies can receive validated real-time and historical data.
 
 ## Business Value
 

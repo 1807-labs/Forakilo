@@ -5,7 +5,7 @@
 
 ## Decision
 
-Forakilo exposes versioned application event and query contracts to a
+Foreightkillo exposes versioned application event and query contracts to a
 provider-neutral bot gateway. Telegram, Discord, local testing, and future
 Noesis adapters depend inward on those contracts. Trading, risk, strategy,
 signal, and paper-execution modules never import provider libraries.

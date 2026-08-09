@@ -48,10 +48,10 @@ Every provider integration MUST record:
 
 ## Anti-Scraping Rule
 
-Forakilo MUST prefer official or licensed APIs. Scraping MAY be proposed only when terms permit automated access, robots/access controls are respected, licensing permits the intended use, official APIs are unavailable, legal risk is documented, and rate limiting plus attribution requirements are implemented.
+Foreightkillo MUST prefer official or licensed APIs. Scraping MAY be proposed only when terms permit automated access, robots/access controls are respected, licensing permits the intended use, official APIs are unavailable, legal risk is documented, and rate limiting plus attribution requirements are implemented.
 
 ## Fallback Strategy
 
-- If live provider connectivity is degraded, Forakilo MUST fail closed for new execution.
+- If live provider connectivity is degraded, Foreightkillo MUST fail closed for new execution.
 - If market data is stale, signals MUST expire and pre-trade risk MUST reject orders.
 - If provider account state disagrees across REST and streaming channels, reconciliation MUST block new orders until resolved.

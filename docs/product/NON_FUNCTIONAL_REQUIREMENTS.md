@@ -1,6 +1,6 @@
 # Non-Functional Requirements
 
-Purpose: define measurable quality attributes for Forakilo.
+Purpose: define measurable quality attributes for Foreightkillo.
 Scope: security, privacy, reliability, accessibility, observability, data quality, performance, and maintainability.
 Audience: engineers, QA, security, risk, operations, and product owners.
 Assumptions: exact SLO numbers will be refined after implementation baselines are measured.
@@ -24,4 +24,4 @@ Unresolved decisions: production hosting, staffing model, and compliance commitm
 
 ## Performance Position
 
-Forakilo MUST NOT claim latency-sensitive trading capability without measured evidence, provider access, infrastructure design, and market-data rights. MVP latency targets should be conservative and based on measured paper/sandbox behavior.
+Foreightkillo MUST NOT claim latency-sensitive trading capability without measured evidence, provider access, infrastructure design, and market-data rights. MVP latency targets should be conservative and based on measured paper/sandbox behavior.

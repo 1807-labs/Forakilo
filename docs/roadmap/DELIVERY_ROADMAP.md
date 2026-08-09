@@ -1,6 +1,6 @@
 # Delivery Roadmap
 
-Purpose: define progressive delivery phases for Forakilo.
+Purpose: define progressive delivery phases for Foreightkillo.
 Scope: foundation, MVP, controlled beta, and later releases.
 Audience: product owners, engineers, risk reviewers, and maintainers.
 Assumptions: live trading is unavailable until gates pass.

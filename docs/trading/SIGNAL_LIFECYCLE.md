@@ -1,6 +1,6 @@
 # Signal Lifecycle
 
-Purpose: define how Forakilo creates, validates, expires, and audits signals.
+Purpose: define how Foreightkillo creates, validates, expires, and audits signals.
 Scope: rules-based, model-assisted, shadow, paper, and future live signals.
 Audience: trading engineers, ML engineers, risk reviewers, and QA.
 Assumptions: a signal is not an order; risk controls decide whether an order plan may proceed.

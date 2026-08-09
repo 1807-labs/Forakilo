@@ -5,16 +5,20 @@ from tempfile import TemporaryDirectory
 
 from behave import given, then, when
 
-from forakilo.application import ForeightService
-from forakilo.brokers.local import LocalBroker
-from forakilo.domain import EventIdentity, InstrumentId, OrderProposal, Side
-from forakilo.execution import Authorization, PracticeExecutionService
-from forakilo.intelligence import ForeightConversation, ResearchRepository, SQLiteConversationMemory
-from forakilo.intelligence.market import Opportunity, OpportunityRanker
-from forakilo.marketdata.local import LocalMarketDataProvider
-from forakilo.operations import OperationalControls
-from forakilo.queries import QueryService
-from forakilo.risk import RiskDecision, RiskOutcome
+from foreightkillo.application import ForeightService
+from foreightkillo.brokers.local import LocalBroker
+from foreightkillo.domain import EventIdentity, InstrumentId, OrderProposal, Side
+from foreightkillo.execution import Authorization, PracticeExecutionService
+from foreightkillo.intelligence import (
+    ForeightConversation,
+    ResearchRepository,
+    SQLiteConversationMemory,
+)
+from foreightkillo.intelligence.market import Opportunity, OpportunityRanker
+from foreightkillo.marketdata.local import LocalMarketDataProvider
+from foreightkillo.operations import OperationalControls
+from foreightkillo.queries import QueryService
+from foreightkillo.risk import RiskDecision, RiskOutcome
 
 
 @when('Foreight analyzes "{instrument}"')

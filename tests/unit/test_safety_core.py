@@ -3,9 +3,9 @@ from decimal import Decimal
 
 import pytest
 
-from forakilo.domain import EventIdentity, InstrumentId, OrderProposal, Side
-from forakilo.execution import Authorization, PaperBroker
-from forakilo.risk import RiskContext, RiskEngine, RiskLimits
+from foreightkillo.domain import EventIdentity, InstrumentId, OrderProposal, Side
+from foreightkillo.execution import Authorization, PaperBroker
+from foreightkillo.risk import RiskContext, RiskEngine, RiskLimits
 
 NOW = datetime(2026, 7, 29, 18, tzinfo=UTC)
 

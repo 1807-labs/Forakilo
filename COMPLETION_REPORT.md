@@ -11,9 +11,9 @@ risk decisions, paper and manually authorized practice execution, portfolio acco
 reconciliation, grounded conversation, governed research, notification delivery, operational
 controls, and an authenticated API and browser console.
 
-The public distribution and command are `for8killo`; the preferred compatibility namespace is
-`foreightkillo`. The original `forakilo` namespace and `FORAKILO_*` environment fallback remain
-available so existing local integrations do not break.
+The public distribution and command are `for8killo`; the canonical Python namespace is
+`foreightkillo`. Configuration accepts the product-prefixed `FOR8KILLO_*` variables and the fully
+spelled `FOREIGHTKILLO_*` equivalents.
 
 ## Safety position
 

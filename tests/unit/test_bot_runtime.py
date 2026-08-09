@@ -1,14 +1,14 @@
 from dataclasses import dataclass, field
 from typing import Any
 
-from forakilo.bot.adapters.http import HttpResponse
-from forakilo.bot.adapters.telegram import TelegramAdapter
-from forakilo.bot.config import TelegramConfig
-from forakilo.bot.contracts import BotProvider
-from forakilo.bot.gateway import BotGateway
-from forakilo.bot.permissions import AllowlistPermissionPolicy
-from forakilo.bot.runtime import OffsetStore, TelegramPollingRuntime
-from forakilo.queries.services import QueryService
+from foreightkillo.bot.adapters.http import HttpResponse
+from foreightkillo.bot.adapters.telegram import TelegramAdapter
+from foreightkillo.bot.config import TelegramConfig
+from foreightkillo.bot.contracts import BotProvider
+from foreightkillo.bot.gateway import BotGateway
+from foreightkillo.bot.permissions import AllowlistPermissionPolicy
+from foreightkillo.bot.runtime import OffsetStore, TelegramPollingRuntime
+from foreightkillo.queries.services import QueryService
 
 
 @dataclass

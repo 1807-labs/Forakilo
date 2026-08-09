@@ -2,9 +2,9 @@ from decimal import Decimal
 
 import pytest
 
-from forakilo.application import ForeightService
-from forakilo.intelligence.market import Opportunity, OpportunityRanker
-from forakilo.marketdata.local import LocalMarketDataProvider
+from foreightkillo.application import ForeightService
+from foreightkillo.intelligence.market import Opportunity, OpportunityRanker
+from foreightkillo.marketdata.local import LocalMarketDataProvider
 
 
 def test_analysis_is_explainable_and_paper_only() -> None:

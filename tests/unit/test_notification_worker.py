@@ -2,11 +2,11 @@ from dataclasses import dataclass
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
 
-from forakilo.bot.contracts import DeliveryFailure, DeliveryResult
-from forakilo.notifications.events import Visibility
-from forakilo.notifications.outbox import OutboxRecord, OutboxState, SQLiteOutbox
-from forakilo.notifications.projections import Notification, NotificationPriority
-from forakilo.notifications.worker import OutboxWorker
+from foreightkillo.bot.contracts import DeliveryFailure, DeliveryResult
+from foreightkillo.notifications.events import Visibility
+from foreightkillo.notifications.outbox import OutboxRecord, OutboxState, SQLiteOutbox
+from foreightkillo.notifications.projections import Notification, NotificationPriority
+from foreightkillo.notifications.worker import OutboxWorker
 
 
 @dataclass
