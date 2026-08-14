@@ -39,7 +39,7 @@ Unresolved decisions: exact package versions, hosting provider, paid data vendor
 | Experiment/model registry | MLflow | Weights & Biases SaaS, custom registry | Self-hostable, broad ecosystem, registry support. |
 | Model monitoring | Evidently plus custom trading metrics | vendor-only monitors | Self-hostable model/data monitoring starter. |
 | Backtesting | VectorBT for vectorized research; event-driven engine spike with NautilusTrader | Backtrader primary | Avoid relying on one engine for all truth. Backtrader rejected as primary due GPL and maintenance risk. |
-| Dependency management | uv | Poetry, pip-tools | Fast Python project management and lockfile support. |
+| Dependency management | pip / pip-tools | Poetry | Standard `pip` with `pip-tools` (`pip-compile`/`pip-sync`) or constraints-based workflows. |
 | Lint/format | Ruff | Flake8 + Black + isort stack | Single fast tool for many checks. |
 | Type checking | Pyright or mypy, final choice deferred | none | Required gate once code exists. |
 | Security scanning | Semgrep CE, pip-audit, gitleaks, Trivy/Grype | single scanner only | Layered checks for code, dependencies, secrets, and containers. |

@@ -10,7 +10,7 @@ Unresolved decisions: final CI provider, runner trust model, and branch protecti
 ## Proposed Pipelines
 
 - Documentation: Markdown lint, link check, Mermaid validation, placeholder/claim search.
-- Backend: uv sync, Ruff, type checks, unit/property/API tests, dependency scan.
+- Backend: `python -m pip install -e .[dev]` (or `pip install -r requirements-dev.txt`), Ruff, type checks, unit/property/API tests, dependency scan.
 - Frontend: package manager install, lint, type check, unit/UI/accessibility tests.
 - Data: schema contract tests, data-quality fixtures, replay tests.
 - ML: leakage tests, validation report generation, model-card check.

@@ -26,11 +26,12 @@ from a legacy or cloud-synced workspace.
 The following commands were run from `<FOREIGHTKILLO_WORKTREE>`:
 
 ```text
-uv sync --all-groups
-uv run python -m json.tool docs/migration/SOURCE_PRESERVATION_MANIFEST.json
-uv run pytest -p no:cacheprovider
-uv run ruff check .
-uv run pyright
+scripts\setup_dev.ps1    # Windows: run in PowerShell
+scripts/setup_dev.sh     # Unix: run in a POSIX shell
+python -m json.tool docs/migration/SOURCE_PRESERVATION_MANIFEST.json
+python -m pytest -p no:cacheprovider
+ruff check .
+pyright
 ```
 
 Results: six tests passed, Ruff passed, Pyright strict reported zero errors,

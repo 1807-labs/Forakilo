@@ -18,4 +18,4 @@ Unresolved decisions: package registries, container registry, and CI runner trus
 
 ## Initial Tooling Direction
 
-Use uv for Python locking, package manager lockfiles for TypeScript, Ruff for linting, Semgrep CE with license review, pip-audit or equivalent for Python dependencies, npm audit or equivalent for frontend dependencies, gitleaks for secrets, Trivy/Grype for containers, CycloneDX for SBOM, and Sigstore Cosign for signing.
+Use `pip` and `pip-tools` or constraints-based lockfiles for Python locking, package manager lockfiles for TypeScript, Ruff for linting, Semgrep CE with license review, pip-audit or equivalent for Python dependencies, npm audit or equivalent for frontend dependencies, gitleaks for secrets, Trivy/Grype for containers, CycloneDX for SBOM, and Sigstore Cosign for signing.

@@ -7,5 +7,5 @@ if (-not (Test-Path -LiteralPath $Target)) {
 }
 git -C $Target fetch origin $Lock.commit
 git -C $Target checkout --detach $Lock.commit
-uv run python (Join-Path $Root "scripts\verify_lean.py")
+& python (Join-Path $Root "scripts\verify_lean.py")
 

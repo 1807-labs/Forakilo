@@ -11,14 +11,14 @@ Status: **PRESERVED LOCALLY; remote publication and deletion blocked**
 - Requested canonical worktree: absent
 - Supplied legacy workspace `<LEGACY_WORKSPACE>`: present
 - A second local Foreightkillo checkout exists and remains preserved.
-- Git 2.45.1, uv 0.12.0, Docker 29.6.2, WSL 2.7.11, and .NET SDK 10.0.302
+-- Git 2.45.1, Docker 29.6.2, WSL 2.7.11, and .NET SDK 10.0.302
   were discovered.
 - GitHub CLI and Node were not discovered locally.
 - The connected GitHub application verified read access to all five repositories.
   It reports push access to Foreightkillo and administrator access to Chainna,
   the private annotation source repository, Chains, and Lean.
 - The Windows Store Python launcher is present but inaccessible in the
-  restricted execution context; uv-managed Python is the supported path.
+  restricted execution context; a `venv`-managed Python is the supported path.
 
 No secret values were inspected or printed.
 
@@ -36,8 +36,8 @@ No secret values were inspected or printed.
   `build: establish Foreightkillo development foundation`.
 - Commit `71bc343a65cd5ee607ca16ef06f3d4298f67958a` is
   `feat: migrate auto-annotation contracts`.
-- Existing validation is represented by `uv run pytest -p no:cacheprovider`,
-  `uv run ruff check .`, and `uv run pyright`.
+-- Existing validation is represented by `python -m pytest -p no:cacheprovider`,
+  `ruff check .`, and `pyright` when using a `venv` or system Python and `pip`.
 
 The normal Git push was not executed: the managed safety review blocked public
 publication because the commits disclose local machine paths and the name of a
