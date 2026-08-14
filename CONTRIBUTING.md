@@ -1,9 +1,9 @@
-# Contributing to Forakilo
+# Contributing to Foreightkillo
 
 Purpose: define contribution expectations for the pre-development repository.
 Scope: documentation, backlog, and future code contributions.
 Audience: contributors and maintainers.
-Assumptions: Forakilo is pre-development and safety-critical features require extra review.
+Assumptions: Foreightkillo is pre-development and safety-critical features require extra review.
 Dependencies: [Development Standards](docs/engineering/DEVELOPMENT_STANDARDS.md), [Secure SDLC](docs/security/SECURE_SDLC.md).
 Unresolved decisions: maintainer roster and branch protection configuration.
 

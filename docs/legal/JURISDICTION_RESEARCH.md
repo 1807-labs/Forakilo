@@ -20,4 +20,4 @@ Unresolved decisions: province-by-province analysis, user eligibility, and provi
 
 ## Expansion Framework
 
-Before adding a jurisdiction, Forakilo MUST assess privacy law, securities/derivatives law, crypto-asset rules, FX/CFD rules, marketing restrictions, data localization, tax reporting implications, provider availability, user eligibility, disclosures, complaint handling, and incident notification.
+Before adding a jurisdiction, Foreightkillo MUST assess privacy law, securities/derivatives law, crypto-asset rules, FX/CFD rules, marketing restrictions, data localization, tax reporting implications, provider availability, user eligibility, disclosures, complaint handling, and incident notification.

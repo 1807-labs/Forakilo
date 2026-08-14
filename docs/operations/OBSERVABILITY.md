@@ -1,6 +1,6 @@
 # Observability
 
-Purpose: define logs, metrics, traces, and events required for Forakilo.
+Purpose: define logs, metrics, traces, and events required for Foreightkillo.
 Scope: authentication, dashboard, data, models, signals, risk, execution, reconciliation, alerts, and audit.
 Audience: engineers, operators, security reviewers, and risk reviewers.
 Assumptions: OpenTelemetry is the portable baseline.

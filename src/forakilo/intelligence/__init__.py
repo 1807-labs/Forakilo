@@ -1,1 +1,0 @@
-"""Local-first intelligence plane."""

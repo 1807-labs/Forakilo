@@ -1,6 +1,6 @@
 # Risk Management Policy
 
-Purpose: define deterministic risk controls for Forakilo.
+Purpose: define deterministic risk controls for Foreightkillo.
 Scope: paper trading, sandbox trading, and future live trading.
 Audience: risk administrators, trading engineers, QA, and operators.
 Assumptions: risk limits are conservative until product-owner and risk approvals set exact values.
@@ -9,7 +9,7 @@ Unresolved decisions: numeric limits by market, venue, and user eligibility.
 
 ## Required Controls
 
-Forakilo MUST implement deterministic controls independent of model output:
+Foreightkillo MUST implement deterministic controls independent of model output:
 
 - Maximum risk per trade.
 - Maximum account, instrument, and correlated exposure.

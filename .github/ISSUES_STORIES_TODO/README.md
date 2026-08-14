@@ -1,4 +1,4 @@
-# Forakilo Story Backlog
+# Foreightkillo Story Backlog
 
 Purpose: hold normalized pre-development stories before GitHub issues are created.
 Scope: foundation and MVP backlog candidates.

@@ -5,7 +5,7 @@
 
 ## Decision
 
-Forakilo supports Python `>=3.11,<3.13` and uses Python 3.11.11 as its release
+Foreightkillo supports Python `>=3.11,<3.13` and uses Python 3.11.11 as its release
 and LEAN compatibility baseline. Deterministic domain, intelligence, strategy,
 signal, risk, and portfolio packages must not import LEAN, QuantConnect, or
 pythonnet. Only `adapters/lean` may translate across that boundary.

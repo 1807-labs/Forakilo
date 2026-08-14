@@ -1,0 +1,54 @@
+name: For8killo CI
+
+on:
+  push:
+    branches:
+      - main
+      - 'feat/**'
+      - 'release/**'
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    name: Test and lint
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: [3.11, 3.12]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip "setuptools>=83"
+          python -m pip install -r requirements-dev.txt
+          python -m pip install -e .
+
+      - name: Run Ruff lint
+        run: |
+          python -m ruff check src tests
+
+      - name: Run Pyright type check
+        run: |
+          python -m pyright
+
+      - name: Run pytest
+        run: |
+          python -m pytest tests
+
+      - name: Run executable product features
+        run: |
+          python -m behave
+
+      - name: Run dependency audit
+        run: |
+          python -m pip_audit --progress=off

@@ -13,7 +13,7 @@ Unresolved decisions: network segmentation and hosting controls.
 | --- | --- | --- |
 | Browser to API | User requests, sessions, commands | Authentication, authorization, CSRF controls where relevant, rate limits, input validation. |
 | API to credential vault | Secret creation and use | Encryption, least privilege, masking, audit, step-up authentication. |
-| Forakilo to providers | Market data, account data, orders | Provider-specific validation, rate limits, idempotency, status checks, retries, reconciliation. |
+| Foreightkillo to providers | Market data, account data, orders | Provider-specific validation, rate limits, idempotency, status checks, retries, reconciliation. |
 | Raw to normalized data | Untrusted payload processing | Schema validation, quarantine, provenance, timestamp normalization. |
 | Research to model registry | Candidate artifacts | Reproducibility, signatures/fingerprints, evaluation reports, approval status. |
 | Model to trading | Signals | Confidence, calibration, expiry, risk checks, abstention. |

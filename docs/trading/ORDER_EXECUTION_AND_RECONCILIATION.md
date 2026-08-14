@@ -27,4 +27,4 @@ Unresolved decisions: provider-specific order types and reconciliation endpoints
 
 ## Unknown Order Outcome
 
-If a timeout occurs after an order may have been accepted, Forakilo MUST query provider state using idempotency/client order ID and block duplicate submissions until outcome is resolved.
+If a timeout occurs after an order may have been accepted, Foreightkillo MUST query provider state using idempotency/client order ID and block duplicate submissions until outcome is resolved.

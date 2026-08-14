@@ -1,9 +1,9 @@
 # Business Continuity
 
-Purpose: define continuity expectations for Forakilo operations.
+Purpose: define continuity expectations for Foreightkillo operations.
 Scope: provider outages, cloud outages, staffing gaps, data failures, security incidents, and legal restrictions.
 Audience: operators, product owners, risk reviewers, and legal counsel.
-Assumptions: Forakilo must remain able to halt risky actions before maintaining feature availability.
+Assumptions: Foreightkillo must remain able to halt risky actions before maintaining feature availability.
 Dependencies: [Incident Response](INCIDENT_RESPONSE_PLAN.md), [Backup and Disaster Recovery](BACKUP_AND_DISASTER_RECOVERY.md).
 Unresolved decisions: continuity staffing, provider alternatives, and customer communications.
 

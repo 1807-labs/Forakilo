@@ -35,6 +35,6 @@ No repository or workspace is authorized for deletion in this work unit.
 - **LEAN:** not deletion-eligible; external pinned runtime/reference with
   unresolved local cleanliness.
 
-Chains, LEAN, the legacy wrapper, the prior Forakilo checkout, Chainna, and the
+Chains, LEAN, the legacy wrapper, the prior Foreightkillo checkout, Chainna, and the
 private annotation source repository must all remain preserved.
 

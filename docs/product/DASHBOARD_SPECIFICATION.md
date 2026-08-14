@@ -1,6 +1,6 @@
 # Dashboard Specification
 
-Purpose: define the Forakilo dashboard experience before implementation.
+Purpose: define the Foreightkillo dashboard experience before implementation.
 Scope: authenticated dashboard for MVP and controlled beta.
 Audience: product, design, frontend, backend, QA, risk, and operations.
 Assumptions: dashboard data is read-only by default; high-impact commands require step-up authentication; paper and live modes must be visually distinct.

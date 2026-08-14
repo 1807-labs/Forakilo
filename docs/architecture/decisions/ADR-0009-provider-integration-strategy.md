@@ -3,7 +3,7 @@
 Status: Accepted
 Date: 2026-07-04
 
-Purpose: define how Forakilo integrates with external brokers, exchanges, and data providers.
+Purpose: define how Foreightkillo integrates with external brokers, exchanges, and data providers.
 Scope: market data, account data, order execution, status, and provider abstraction.
 Audience: backend engineers, trading engineers, security reviewers, legal counsel, and operators.
 Assumptions: provider terms, account eligibility, and API behavior differ materially by market and jurisdiction.
@@ -12,7 +12,7 @@ Unresolved decisions: approved provider list and contracts require legal and pro
 
 ## Decision
 
-Forakilo will prefer direct provider adapters for approved venues and use unifying libraries only after endpoint-level behavior, terms, and risk controls are verified. OANDA v20, Coinbase Advanced Trade, and Kraken are candidates for early evaluation. Binance is not an initial Canadian live-trading provider.
+Foreightkillo will prefer direct provider adapters for approved venues and use unifying libraries only after endpoint-level behavior, terms, and risk controls are verified. OANDA v20, Coinbase Advanced Trade, and Kraken are candidates for early evaluation. Binance is not an initial Canadian live-trading provider.
 
 ## Rationale
 

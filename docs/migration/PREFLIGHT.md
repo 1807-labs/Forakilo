@@ -5,26 +5,26 @@ Status: **PRESERVED LOCALLY; remote publication and deletion blocked**
 
 ## Verified locally
 
-- Active worktree: `<FORAKILO_WORKTREE>`
-- Canonical remote configured: `https://github.com/1807-labs/Forakilo`
+- Active worktree: `<FOREIGHTKILLO_WORKTREE>`
+- Canonical remote configured: `https://github.com/1807-labs/Foreightkillo`
 - Starting commit: `a86faeb8dd878309865f0bfa3902206402780096`
 - Requested canonical worktree: absent
 - Supplied legacy workspace `<LEGACY_WORKSPACE>`: present
-- A second local Forakilo checkout exists and remains preserved.
+- A second local Foreightkillo checkout exists and remains preserved.
 - Git 2.45.1, uv 0.12.0, Docker 29.6.2, WSL 2.7.11, and .NET SDK 10.0.302
   were discovered.
 - GitHub CLI and Node were not discovered locally.
 - The connected GitHub application verified read access to all five repositories.
-  It reports push access to Forakilo and administrator access to Chainna,
+  It reports push access to Foreightkillo and administrator access to Chainna,
   the private annotation source repository, Chains, and Lean.
 - The Windows Store Python launcher is present but inaccessible in the
   restricted execution context; uv-managed Python is the supported path.
 
 No secret values were inspected or printed.
 
-## Forakilo implementation verification
+## Foreightkillo implementation verification
 
-- Resolved root: `<FORAKILO_WORKTREE>`
+- Resolved root: `<FOREIGHTKILLO_WORKTREE>`
 - Branch/upstream: `main` / `origin/main`
 - Verified starting HEAD: `71bc343a65cd5ee607ca16ef06f3d4298f67958a`
 - Fetch result before push attempt: remote was zero commits ahead and local was
@@ -33,7 +33,7 @@ No secret values were inspected or printed.
   was verified as an ancestor of local HEAD.
 - The worktree had no staged, modified, or untracked files.
 - Commit `061a6b6e2bcfffae9b58960e436ebfa2ef7c3f39` is
-  `build: establish Forakilo development foundation`.
+  `build: establish Foreightkillo development foundation`.
 - Commit `71bc343a65cd5ee607ca16ef06f3d4298f67958a` is
   `feat: migrate auto-annotation contracts`.
 - Existing validation is represented by `uv run pytest -p no:cacheprovider`,

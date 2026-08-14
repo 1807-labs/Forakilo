@@ -8,7 +8,7 @@ Estimate: 13
 
 ## User Story
 
-As a quantitative developer, I want to train and evaluate a simple baseline model or strategy so that Forakilo can generate auditable paper-trading signals without overclaiming performance.
+As a quantitative developer, I want to train and evaluate a simple baseline model or strategy so that Foreightkillo can generate auditable paper-trading signals without overclaiming performance.
 
 ## Business Value
 

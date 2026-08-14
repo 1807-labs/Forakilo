@@ -1,6 +1,6 @@
 # AI Risk Register
 
-Purpose: identify and control AI/model risks specific to Forakilo.
+Purpose: identify and control AI/model risks specific to Foreightkillo.
 Scope: data, model, retraining, monitoring, promotion, and user interpretation risks.
 Audience: ML engineers, risk reviewers, security reviewers, product owners, and operators.
 Assumptions: NIST AI RMF is used as the organizing framework.

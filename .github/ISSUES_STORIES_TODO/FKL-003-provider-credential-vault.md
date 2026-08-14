@@ -8,7 +8,7 @@ Estimate: 13
 
 ## User Story
 
-As a user, I want to store approved sandbox or demo provider credentials securely so that Forakilo can connect without exposing my secrets.
+As a user, I want to store approved sandbox or demo provider credentials securely so that Foreightkillo can connect without exposing my secrets.
 
 ## Business Value
 

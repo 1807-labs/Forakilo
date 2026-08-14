@@ -12,7 +12,7 @@ Unresolved decisions: future service extraction boundaries depend on measured lo
 
 ## Decision
 
-Forakilo will start as a modular monolith with explicit internal planes: control, data, intelligence, trading, and governance/operations.
+Foreightkillo will start as a modular monolith with explicit internal planes: control, data, intelligence, trading, and governance/operations.
 
 ## Rationale
 

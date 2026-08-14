@@ -1,6 +1,6 @@
 # Incident Response Plan
 
-Purpose: define how Forakilo responds to incidents.
+Purpose: define how Foreightkillo responds to incidents.
 Scope: security, privacy, data, model, trading, provider, and infrastructure incidents.
 Audience: operators, security reviewers, maintainers, legal counsel, and product owners.
 Assumptions: no production incident process exists yet.

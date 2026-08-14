@@ -1,6 +1,6 @@
 # Data Architecture
 
-Purpose: define Forakilo's point-in-time data architecture.
+Purpose: define Foreightkillo's point-in-time data architecture.
 Scope: market data, macro data, normalized data, features, datasets, inference inputs, audit records, and artifacts.
 Audience: data engineers, ML engineers, quantitative researchers, and reviewers.
 Assumptions: provider data may be incomplete, delayed, revised, or restricted by terms.

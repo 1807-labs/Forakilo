@@ -1,6 +1,6 @@
 # Data Quality and Validation
 
-Purpose: define quality controls for data used by Forakilo.
+Purpose: define quality controls for data used by Foreightkillo.
 Scope: market data, macro data, provider account data, features, datasets, and inference inputs.
 Audience: data engineers, ML engineers, QA, and risk reviewers.
 Assumptions: bad data can cause financial loss and invalid model evaluation.

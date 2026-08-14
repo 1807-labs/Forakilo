@@ -16,7 +16,7 @@ Adopt NIST SSDF, OWASP ASVS/API guidance, SLSA provenance goals, CycloneDX SBOMs
 
 ## Rationale
 
-Forakilo will handle credentials, personal data, model artifacts, financial decisions, and trading events. Security must be a product requirement, not a later hardening pass.
+Foreightkillo will handle credentials, personal data, model artifacts, financial decisions, and trading events. Security must be a product requirement, not a later hardening pass.
 
 ## Consequences
 

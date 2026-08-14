@@ -8,7 +8,7 @@ Estimate: 8
 
 ## User Story
 
-As a user, I want to register, verify my email, and log in securely so that protected Forakilo services are not accessible to unauthenticated users.
+As a user, I want to register, verify my email, and log in securely so that protected Foreightkillo services are not accessible to unauthenticated users.
 
 ## Business Value
 

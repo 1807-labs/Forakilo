@@ -1,6 +1,6 @@
 # Model Card Template
 
-Purpose: provide the required structure for Forakilo model cards.
+Purpose: provide the required structure for Foreightkillo model cards.
 Scope: all registered model candidates, champions, and challengers.
 Audience: ML engineers, risk reviewers, security reviewers, and auditors.
 Assumptions: this template is documentation; model cards are created per model.

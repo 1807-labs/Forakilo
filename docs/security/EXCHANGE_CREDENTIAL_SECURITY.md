@@ -19,8 +19,8 @@ Unresolved decisions: final secrets manager and provider-specific scope mappings
 
 ## Provider Validation
 
-Before enabling a provider connection, Forakilo MUST verify account identity, environment, permissions, supported markets, account mode, rate-limit access, and whether live trading is disabled or enabled.
+Before enabling a provider connection, Foreightkillo MUST verify account identity, environment, permissions, supported markets, account mode, rate-limit access, and whether live trading is disabled or enabled.
 
 ## Compromise Response
 
-On suspected credential compromise, Forakilo MUST disable provider connection, revoke local credential material, notify user/operator, audit the event, block new execution, and require fresh credential validation.
+On suspected credential compromise, Foreightkillo MUST disable provider connection, revoke local credential material, notify user/operator, audit the event, block new execution, and require fresh credential validation.

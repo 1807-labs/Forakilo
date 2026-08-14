@@ -3,24 +3,34 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "forakilo"
+name = "for8killo"
 version = "0.1.0"
-description = "Deterministic quantitative research and paper-trading core"
+description = "Foreight-powered market intelligence and paper-trading platform"
 requires-python = ">=3.11,<3.13"
 license = { file = "LICENSE" }
-dependencies = []
+dependencies = [
+  "fastapi>=0.109,<1",
+  "uvicorn>=0.23,<1",
+  "pydantic>=2.8,<3",
+  "httpx>=0.27,<1",
+]
 
 [dependency-groups]
 dev = [
+  "behave>=1.2.6,<2",
   "coverage>=7.6,<8",
+  "pip-audit>=2.8,<3",
   "pre-commit>=4,<5",
   "pyright>=1.1.400,<2",
-  "pytest>=8.3,<9",
+  "pytest>=9.0.3,<10",
   "ruff>=0.11,<1",
 ]
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/forakilo"]
+packages = ["src/foreightkillo"]
+
+[project.scripts]
+for8killo = "foreightkillo.cli:main"
 
 [tool.pytest.ini_options]
 addopts = "-ra --strict-config --strict-markers"
@@ -35,6 +45,7 @@ select = ["E", "F", "I", "B", "UP", "RUF", "S"]
 
 [tool.ruff.lint.per-file-ignores]
 "tests/**" = ["S101"]
+"features/**" = ["S101"]
 "scripts/verify_lean.py" = ["S603", "S607"]
 
 [tool.pyright]

@@ -2,7 +2,7 @@
 
 Status: **COMPLETE**
 
-Requested canonical path: `<FORAKILO_WORKTREE>`  
+Requested canonical path: `<FOREIGHTKILLO_WORKTREE>`
 Current active path: `<LOCAL_SOURCE_PATH>`
 
 The canonical product directory was created by a fresh clone after public main

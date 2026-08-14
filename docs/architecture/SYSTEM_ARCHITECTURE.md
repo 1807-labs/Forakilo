@@ -1,15 +1,15 @@
 # System Architecture
 
-Purpose: define the target architecture for Forakilo.
+Purpose: define the target architecture for Foreightkillo.
 Scope: logical planes, major components, boundaries, and MVP architecture style.
 Audience: engineers, product owners, security reviewers, risk reviewers, and operators.
-Assumptions: Forakilo begins as a modular monolith; microservices require future evidence.
+Assumptions: Foreightkillo begins as a modular monolith; microservices require future evidence.
 Dependencies: [ADR-0001](decisions/ADR-0001-modular-monolith-first.md), [Trust Boundaries](TRUST_BOUNDARIES.md), [Data Flow](DATA_FLOW.md).
 Unresolved decisions: cloud provider, deployment topology, and service extraction boundaries.
 
 ## Architecture Style
 
-Forakilo SHOULD begin as a modular monolith with strict internal modules and audit boundaries. The modules are grouped into five logical planes.
+Foreightkillo SHOULD begin as a modular monolith with strict internal modules and audit boundaries. The modules are grouped into five logical planes.
 
 ```mermaid
 flowchart LR

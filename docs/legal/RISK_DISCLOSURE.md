@@ -18,7 +18,7 @@ Unresolved decisions: jurisdiction-specific mandated disclosures.
 - Market data can be delayed, incomplete, revised, or inaccurate.
 - Providers can reject, delay, partially fill, or cancel orders.
 - Network, software, infrastructure, and provider failures can affect results.
-- Forakilo does not provide personalized financial advice in the MVP.
+- Foreightkillo does not provide personalized financial advice in the MVP.
 - Users are responsible for understanding provider terms, fees, tax obligations, and risks.
 
 ## Acceptance Flow
